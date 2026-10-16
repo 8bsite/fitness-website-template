@@ -12,26 +12,26 @@
 
 A one-page site for a performance training club with its own test lab, covering running, cycling, swimming, court sports and strength. Every section is a framed slide floating on a cold blue-grey mist: headings streak in and out like sprinters, tiles are dealt from a deck, a lens opens on the lab photo and the week's schedule runs sideways as you scroll.
 
-Good for: gym, fitness or training club; running, cycling or triathlon coaching; personal trainer or coaching studio with membership plans; sports performance lab or physio clinic; multi-sport club with a weekly class schedule. Free for personal and commercial use (MIT), made by [8B](https://8b.com/).
+Good for: gym, fitness or training club; running, cycling or triathlon coaching; personal trainer or coaching studio with membership plans; sports performance lab or physio clinic; multi-sport club with a weekly class schedule.
 
-## Quick start
+## Use it with an AI coding agent
 
-Pick one:
+Download the files into your project (in Windows PowerShell type `curl.exe`):
 
-- **With an AI coding agent** (Claude Code, Codex, Cursor, Windsurf…). Download the files into your project (in Windows PowerShell type `curl.exe`):
-  ```bash
-  curl -LO https://raw.githubusercontent.com/8bsite/fitness-website-template/main/index.html
-  curl -LO https://raw.githubusercontent.com/8bsite/fitness-website-template/main/AGENTS.md
-  curl -LO https://raw.githubusercontent.com/8bsite/fitness-website-template/main/LICENSE
-  curl -LO https://raw.githubusercontent.com/8bsite/fitness-website-template/main/CREDITS.md
-  ```
-  Then give your agent this prompt:
-  ```text
-  Read AGENTS.md, then edit index.html. Use this template as the base for a site for <your gym, club or coaching business: what you train, where, coaches, schedule, prices, how to book>. Keep the layout, the motion and the single-file format; replace the brand name, copy, photos, coaches, schedule, prices, links and contacts, and recolour it through the CSS variables if needed.
-  ```
-  Give the agent the downloaded file, not a link: an agent reads a link as a summary and would rebuild a different page.
-- **No code.** Download the ZIP, unzip it, replace the contacts and texts in `index.html`, put `index.html` into an empty folder and drag that folder onto [Netlify Drop](https://app.netlify.com/drop). The page is online in a minute.
-- **On GitHub.** Click **[Use this template](https://github.com/new?template_name=fitness-website-template&template_owner=8bsite)** to get your own copy, then **Settings → Pages → Deploy from a branch → main**. Your site appears at `https://<you>.github.io/<repo>/`.
+```bash
+curl -LO https://raw.githubusercontent.com/8bsite/fitness-website-template/main/index.html
+curl -LO https://raw.githubusercontent.com/8bsite/fitness-website-template/main/AGENTS.md
+curl -LO https://raw.githubusercontent.com/8bsite/fitness-website-template/main/LICENSE
+curl -LO https://raw.githubusercontent.com/8bsite/fitness-website-template/main/CREDITS.md
+```
+
+Then give your agent this prompt:
+
+```text
+Read AGENTS.md, then edit index.html. Use this template as the base for a site for <your gym, club or coaching business: what you train, where, coaches, schedule, prices, how to book>. Keep the layout, the motion and the single-file format; replace the brand name, copy, photos, coaches, schedule, prices, links and contacts, and recolour it through the CSS variables if needed.
+```
+
+Give the agent the downloaded file, not a link: from a link it would rebuild a different page. No agent? Click **[Use this template](https://github.com/new?template_name=fitness-website-template&template_owner=8bsite)**, edit `index.html` and turn on **Settings → Pages**.
 
 ## What's on the page
 
@@ -49,43 +49,24 @@ Pick one:
 - **Book your first test** — booking: a heading on a line across the slide, address, hours, phone, email and a short form (placeholders)
 - **Footer** — width-filling wordmark, a line about the club, links, socials, copyright and the Design: 8B credit
 
+## Design
+
+Palette: ![#ffffff](https://img.shields.io/badge/-%23ffffff-ffffff?style=flat-square) ![#0b1019](https://img.shields.io/badge/-%230b1019-0b1019?style=flat-square) ![#1a2333](https://img.shields.io/badge/-%231a2333-1a2333?style=flat-square) ![#dbe4ec](https://img.shields.io/badge/-%23dbe4ec-dbe4ec?style=flat-square) ![#9db1c4](https://img.shields.io/badge/-%239db1c4-9db1c4?style=flat-square) ![#536477](https://img.shields.io/badge/-%23536477-536477?style=flat-square) ![#2f54e0](https://img.shields.io/badge/-%232f54e0-2f54e0?style=flat-square) ![#edf2f6](https://img.shields.io/badge/-%23edf2f6-edf2f6?style=flat-square)  
+Fonts: Geist (Google Fonts). Change both through the CSS variables in the `:root` block at the top of `<head>`. A big display line with `style="--len:N"` fills its width: set N to its new number of characters.
+
+- The spheres, orbit rings and slide corner marks are CSS and SVG, not images: recolour them through the CSS variables in :root.
+- Display lines with style="--len:N" (opening headline, "Only forward®", "Breathe. Move. Repeat.", footer wordmark) fill their width: set N to the new number of characters; a trailing ® counts as one ("arcline®" → 8, "Only forward®" → 13).
+- The wordmark is written in lower case ("arcline") in the nav and the footer: a case-sensitive search for "Arcline" misses it.
+
 ## Before you publish
 
-- Replace everything marked `data-8b-placeholder` (social preview image, favicon, phone, email, form, social) and the invented demo facts — prices, dates, address. [AGENTS.md](AGENTS.md) lists them.
-- The contact form does not send anything yet: connect it to a form service (Formspree, Netlify Forms) or remove it; [AGENTS.md](AGENTS.md) shows both.
+- Replace everything marked `data-8b-placeholder` (social preview image, favicon, phone, email, form, social) and the invented demo facts: prices, dates, address. [AGENTS.md](AGENTS.md) lists them.
+- The form sends nothing yet: connect it to Formspree or Netlify Forms, or remove it.
 
-## Customize
+## Tech
 
-- **Colours and fonts**: CSS variables in the `:root` block at the top of `<head>`.
-- **Text**: edit it in place. A big display line with `style="--len:N"` fills its width: set N to its new number of characters.
-- **Photos**: replace `src`, delete `srcset` and `sizes` (they list Unsplash sizes) and update the `alt` texts.
-- **Animations**: each section's animation is one `<script data-8b-part="scene:<id>">` block at the end of the file. For native scroll, delete the Lenis block in `page-init`.
-
-## For developers
-
-- **Stack.** HTML and CSS (custom properties, cascade layers) with GSAP 3.13.0, ScrollTrigger, Lenis 1.3.27 from jsDelivr. No build step, no framework, no npm. 90 KB.
-- **Layout of the file.** `<head>`: CSS variables, shared classes, then one style block per section. Then the markup, one element per section with a one-line comment above it. End of `<body>`: small behaviour scripts, the libraries, smooth scroll (`page-init`), the effects, one animation script per section.
-- **Browsers.** Chrome and Edge 111+, Safari 16.2+, Firefox 113+ (it uses color-mix(), container query units, cascade layers, small/dynamic viewport units).
-- **Accessibility.** Motion runs only when the visitor's system allows it; with "reduce motion" the page is complete and still. FAQ answers use native `<details>` and open without JavaScript. Every photo has alt text.
-- **External requests.** fonts.gstatic.com, images.unsplash.com, cdn.jsdelivr.net. No analytics, no cookies. To self-host everything (offline use, or Google Fonts and GDPR in the EU), download those files and change the URLs.
-- **Licences of the parts.** GSAP is free, commercial use included, under its own standard licence (not MIT); Lenis is MIT; fonts are SIL OFL; photos are under the Unsplash License. See [CREDITS.md](CREDITS.md).
-
-## FAQ
-
-**Can I use it for a client or a commercial site?** Yes. The code is MIT: use it, change it, sell the site you build with it.
-
-**Do I have to keep the "Design: 8B" link?** No. It is welcome, not required.
-
-**Can I use it in React, Next.js, Astro or Vue?** Yes. Move each section's markup and style block into a component and run its animation script in `useGSAP()` (React) or `onMounted` (Vue); start Lenis once. Or keep it as a separate static landing page next to your app (`example.com` for the landing, `app.example.com` for the app).
-
-**Why doesn't the contact form send?** It is a demo. Connect it to Formspree, Netlify Forms or your backend; AGENTS.md has the steps.
-
-**Where are the photos from?** Unsplash; they load from Unsplash's servers. Replace them with your own when you can.
-
-## More free templates
-
-[More 8B templates on GitHub](https://github.com/8bsite) · [8b.com](https://8b.com/)
+GSAP 3.13.0, ScrollTrigger, Lenis 1.3.27 from jsDelivr, 90 KB, no build step. Chrome and Edge 111+, Safari 16.2+, Firefox 113+ (it uses color-mix(), container query units, cascade layers, small/dynamic viewport units). With "reduce motion" on, the page is complete and still.
 
 ## License
 
-The template code is MIT licensed — see [LICENSE](LICENSE). Photos, fonts and libraries keep their own licences — see [CREDITS.md](CREDITS.md).
+MIT, see [LICENSE](LICENSE); the "Design: 8B" footer link is welcome, not required. Photos, fonts and libraries keep their own licences: [CREDITS.md](CREDITS.md). More free templates: [github.com/8bsite](https://github.com/8bsite).
