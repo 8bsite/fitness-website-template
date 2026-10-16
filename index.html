@@ -1,0 +1,1243 @@
+<!doctype html>
+<!--
+  Free website template by 8B · https://github.com/8bsite/fitness-website-template
+  MIT License (code) · Photos: Unsplash License, see CREDITS.md · Fonts: Google Fonts (OFL)
+  One HTML file, no build step. Notes for people and AI agents: README.md and AGENTS.md.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arcline — measured training for run, ride, swim, court and strength</title>
+<meta name="description" content="Arcline is a performance club with its own lab: test, train and retest across running, cycling, swimming, court sports and strength.">
+<meta name="generator" content="8B Templates">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arcline — measured training for run, ride, swim, court and strength">
+<meta property="og:description" content="Arcline is a performance club with its own lab: test, train and retest across running, cycling, swimming, court sports and strength.">
+<meta property="og:image" content="https://your-domain.example/preview.png" data-8b-placeholder="og-image">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2064%2064'%3E%3Crect%20width%3D'64'%20height%3D'64'%20rx%3D'14'%20fill%3D'%231a2333'%2F%3E%3Ctext%20x%3D'32'%20y%3D'45'%20font-family%3D'Arial%2CHelvetica%2Csans-serif'%20font-size%3D'38'%20font-weight%3D'700'%20text-anchor%3D'middle'%20fill%3D'%23edf2f6'%3EA%3C%2Ftext%3E%3C%2Fsvg%3E" data-8b-placeholder="favicon">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=gyBUhwUxId8gMGYQMKR3pzfaWI_RnONalrErE8iusq2KkpeJNBW4zg&skey=70a816dcd17c8a3c&v=v5) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=gyBUhwUxId8gMGYQMKR3pzfaWI_RnONalrErE8iusq2KkpeJNBy4zg&skey=70a816dcd17c8a3c&v=v5) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=gyBUhwUxId8gMGYQMKR3pzfaWI_RnONalrErE8iusq2KkpeJNBe4zg&skey=70a816dcd17c8a3c&v=v5) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=gyBUhwUxId8gMGYQMKR3pzfaWI_RnONalrErE8iusq2KkpeJNBa4zg&skey=70a816dcd17c8a3c&v=v5) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=gyBUhwUxId8gMGYQMKR3pzfaWI_RnONalrErE8iusq2KkpeJNBi4zg&skey=70a816dcd17c8a3c&v=v5) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style data-8b-part="layers">
+@layer tokens, base, atoms, layout, sections, scenes;
+</style>
+<style data-8b-part="tokens">
+@layer tokens {
+:root {
+  --color-1: #ffffff;
+  --color-2: #0b1019;
+  --color-3: #1a2333;
+  --color-4: #dbe4ec;
+  --color-5: #9db1c4;
+  --color-6: #536477;
+  --color-7: #2f54e0;
+  --color-8: #edf2f6;
+  --font-1: "Geist", "Geist Fallback", system-ui, Arial, sans-serif;
+  --radius-1: 999px;
+  --shadow-1: 0 40px 90px -50px color-mix(in srgb, var(--color-3) 60%, transparent);
+  --shadow-2: 0 40px 80px -30px color-mix(in srgb, var(--color-3) 45%, transparent);
+  --space-1: clamp(20px, 3vw, 44px);
+  --space-2: clamp(12px, 3.2vw, 48px);
+  --space-3: clamp(40px, 7vw, 112px);
+}
+}
+</style>
+<style data-8b-part="base">
+@layer base {
+@font-face { font-family: "Geist Fallback"; src: local("Arial Bold"), local("Arial-BoldMT"), local("Helvetica Bold"); font-weight: 550 799; size-adjust: 100.4%; ascent-override: 100.6%; descent-override: 29.9%; line-gap-override: 0%; }
+@font-face { font-family: "Geist Fallback"; src: local("Arial"), local("ArialMT"), local("Helvetica"); font-weight: 100 549; size-adjust: 104.8%; ascent-override: 96.4%; descent-override: 28.6%; line-gap-override: 0%; }
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; background: var(--color-4); }
+html.lenis, html.lenis body { height: auto; }
+.lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
+.lenis [data-lenis-prevent], .lenis [data-lenis-prevent-wheel], .lenis [data-lenis-prevent-touch] { overscroll-behavior: contain; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+.lenis.lenis-autoToggle { transition-property: overflow; transition-duration: 1ms; transition-behavior: allow-discrete; }
+body {
+  margin: 0; min-height: 100vh; overflow-x: clip;
+  font-family: var(--font-1); font-size: 16px; line-height: 1.55; font-weight: 400;
+  color: var(--color-2);
+}
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(circle at 64% 42%, transparent 0 calc(44vmax - 1px), color-mix(in srgb, var(--color-1) 60%, transparent) calc(44vmax - 1px) 44vmax, transparent calc(44vmax + 1px)),
+    radial-gradient(circle at 22% 78%, transparent 0 calc(30vmax - 1px), color-mix(in srgb, var(--color-1) 45%, transparent) calc(30vmax - 1px) 30vmax, transparent calc(30vmax + 1px)),
+    radial-gradient(55% 45% at 78% 18%, color-mix(in srgb, var(--color-1) 70%, transparent), transparent 70%),
+    radial-gradient(60% 55% at 12% 88%, color-mix(in srgb, var(--color-5) 80%, transparent), transparent 72%),
+    radial-gradient(40% 40% at 40% 55%, color-mix(in srgb, var(--color-8) 70%, transparent), transparent 70%),
+    linear-gradient(165deg, var(--color-8), var(--color-4) 45%, var(--color-5));
+}
+img { display: block; max-width: 100%; }
+h1, h2, h3, p, ul, ol, figure, blockquote, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+sup { font-size: .32em; vertical-align: top; position: relative; top: .35em; letter-spacing: 0; margin-left: .04em; }
+:focus-visible { outline: 2px solid var(--color-7); outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+}
+</style>
+<style data-8b-part="system">
+@layer atoms {
+.m-text { font-family: var(--font-1); font-size: 16px; line-height: 1.55; font-weight: 400; letter-spacing: -0.005em; text-transform: none; font-style: normal; }
+
+.m-text-2 { font-family: var(--font-1); font-size: clamp(56px, 10vw, 150px); line-height: .86; font-weight: 500; letter-spacing: -0.065em; text-transform: none; font-style: normal; }
+
+.m-text-3 { font-family: var(--font-1); font-size: clamp(42px, 6.4vw, 96px); line-height: .92; font-weight: 500; letter-spacing: -0.055em; text-transform: none; font-style: normal; }
+
+.m-text-4 { font-family: var(--font-1); font-size: 13px; line-height: 1.35; font-weight: 500; letter-spacing: 0; text-transform: none; font-style: normal; }
+
+.m-text-5 { font-family: var(--font-1); font-size: clamp(18px, 1.5vw, 21px); line-height: 1.38; font-weight: 400; letter-spacing: -0.015em; text-transform: none; font-style: normal; }
+
+.m-text-6 { font-family: var(--font-1); font-size: clamp(21px, 1.9vw, 27px); line-height: 1.08; font-weight: 500; letter-spacing: -0.035em; text-transform: none; font-style: normal; }
+
+.m-text-7 { font-family: var(--font-1); font-size: clamp(28px, 3.5vw, 50px); line-height: 1.04; font-weight: 500; letter-spacing: -0.045em; text-transform: none; font-style: normal; }
+
+.m-btn, .m-btn-2 {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; overflow: hidden;
+  border: 0; border-radius: var(--radius-1); cursor: pointer;
+  font-family: var(--font-1); font-size: 15px; line-height: 1; font-weight: 500; letter-spacing: -0.01em; text-transform: none; font-style: normal; white-space: nowrap;
+}
+.m-btn { background: var(--color-2); color: var(--color-1); }
+.m-btn__label { display: block; }
+
+.m-btn-2 { background: var(--color-1); color: var(--color-2); }
+
+@keyframes m-streak-label { 0% { transform: none; } 44% { transform: translateX(140%) skewX(-24deg); } 45% { transform: translateX(-140%) skewX(-24deg); } 100% { transform: none; } }
+@media (hover: hover) {
+  .m-btn:hover .m-btn__label, .m-btn-2:hover .m-btn__label { animation: m-streak-label .55s cubic-bezier(.6, 0, .2, 1); }
+}
+
+.m-link {
+  display: inline; padding-bottom: 2px; color: inherit;
+  font-family: var(--font-1); font-size: 15px; line-height: 1.3; font-weight: 500; letter-spacing: -0.01em; text-transform: none; font-style: normal;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+}
+@keyframes m-streak-line { 0% { background-position: 0 100%; background-size: 100% 1px; } 45% { background-position: 100% 100%; background-size: 0 1px; } 46% { background-position: 0 100%; background-size: 0 1px; } 100% { background-position: 0 100%; background-size: 100% 1px; } }
+@media (hover: hover) { .m-link:hover { animation: m-streak-line .6s cubic-bezier(.6, 0, .2, 1); } }
+
+.m-iconbtn {
+  position: relative; display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0; flex: none;
+  border: 1px solid currentColor; border-radius: 50%; background: transparent; color: inherit; cursor: pointer; isolation: isolate;
+}
+.m-iconbtn::before { content: ""; position: absolute; inset: -1px; z-index: -1; border-radius: 50%; background: var(--color-2); transform: scale(0); transition: transform .35s cubic-bezier(.6, 0, .2, 1); }
+.m-iconbtn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; transition: color .35s; }
+@media (hover: hover) { .m-iconbtn:hover::before { transform: scale(1); } .m-iconbtn:hover svg { color: var(--color-1); } }
+
+.m-badge {
+  display: inline-block; padding: 6px 11px; border-radius: var(--radius-1); background: var(--color-1); color: var(--color-2);
+  font-family: var(--font-1); font-size: 13px; line-height: 1.2; font-weight: 500; letter-spacing: -0.005em; text-transform: none; font-style: normal;
+}
+
+.m-slide, .m-slide-2, .m-slide-3 { position: relative; box-shadow: var(--shadow-1); }
+.m-slide { background: var(--color-1); color: var(--color-2); }
+.m-slide::before, .m-slide::after, .m-slide-2::before, .m-slide-2::after, .m-slide-3::before, .m-slide-3::after {
+  content: ""; position: absolute; width: 13px; height: 13px; pointer-events: none; z-index: 3; opacity: .7;
+  background: linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 100% no-repeat;
+}
+.m-slide::before, .m-slide-2::before, .m-slide-3::before { top: 16px; right: 16px; }
+.m-slide::after, .m-slide-2::after, .m-slide-3::after { bottom: 16px; left: 16px; }
+
+.m-slide-2 { background: var(--color-3); color: var(--color-1); }
+.m-slide-2 :focus-visible { outline-color: var(--color-1); }
+
+.m-slide-3 { background: linear-gradient(140deg, var(--color-1), var(--color-8) 55%, var(--color-4)); color: var(--color-2); }
+
+.m-orb {
+  display: block; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, var(--color-1) 0 7%, var(--color-8) 26%, var(--color-5) 76%, color-mix(in srgb, var(--color-5) 82%, var(--color-3)) 100%);
+  box-shadow: var(--shadow-2);
+}
+
+.m-chip { display: block; aspect-ratio: 1; width: 1em; height: auto; border-radius: 50%; object-fit: cover; filter: saturate(.5); }
+
+.m-field { display: grid; gap: 6px; }
+.m-field__label { font-family: var(--font-1); font-size: 13px; line-height: 1.35; font-weight: 500; letter-spacing: 0; text-transform: none; font-style: normal; color: var(--color-6); }
+.m-field input, .m-field select, .m-field textarea {
+  width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid var(--color-5); border-radius: 0; background: var(--color-8); color: var(--color-2);
+  font-family: var(--font-1); font-size: 16px; line-height: 1.4; font-weight: 400; letter-spacing: -0.005em; text-transform: none; font-style: normal;
+}
+.m-field textarea { min-height: 112px; resize: vertical; }
+.m-field :focus-visible { outline-offset: 0; border-color: var(--color-7); }
+}
+</style>
+<style data-8b-part="layout">
+@layer layout {
+main { overflow-x: clip; }
+.l-sec { position: relative; padding-inline: var(--space-2); margin-top: var(--space-3); }
+}
+</style>
+<style data-8b-part="section:navigation">
+@layer sections {
+#navigation { position: fixed; inset: 0 0 auto 0; z-index: 50; pointer-events: none; }
+#navigation .nav__bar {
+  pointer-events: auto; margin: 12px var(--space-2) 0; height: 56px; padding: 0 8px 0 20px;
+  display: flex; align-items: center; gap: 24px;
+  background: color-mix(in srgb, var(--color-1) 72%, transparent); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-1); box-shadow: var(--shadow-1);
+  transition: transform .45s cubic-bezier(.6, 0, .2, 1);
+}
+#navigation .nav__bar[data-hidden] { transform: translateY(calc(-100% - 16px)); }
+#navigation .nav__logo { font-size: 22px; font-weight: 600; letter-spacing: -0.06em; line-height: 1; }
+#navigation .nav__line { color: var(--color-6); white-space: nowrap; }
+#navigation .nav__links { display: flex; gap: 22px; margin-left: auto; }
+#navigation .nav__links .m-link { background-size: 0 1px; }
+#navigation .nav__cta { min-height: 40px; padding: 0 18px; }
+#navigation .nav__menu { display: none; }
+#navigation .menu {
+  pointer-events: auto; position: fixed; inset: 0; z-index: 2; padding: 84px var(--space-2) var(--space-2); overflow-y: auto;
+  background: var(--color-3); color: var(--color-1);
+}
+#navigation .menu[hidden] { display: none; }
+#navigation .menu__close { position: absolute; top: 18px; right: var(--space-2); }
+#navigation .menu__links { display: grid; gap: 4px; }
+#navigation .menu__links a { display: block; padding: 6px 0; font-size: clamp(40px, 12vw, 64px); line-height: 1; }
+#navigation .menu__cta { margin-top: 32px; }
+@media (max-width: 1100px) { #navigation .nav__line { display: none; } }
+@media (max-width: 900px) {
+  #navigation .nav__links, #navigation .nav__cta { display: none; }
+  #navigation .nav__menu { display: inline-grid; margin-left: auto; }
+  #navigation .nav__bar { padding-right: 6px; }
+}
+}
+</style>
+<style data-8b-part="section:opening">
+@layer sections {
+#opening { position: relative; }
+#opening .op-s1 { position: sticky; top: 0; height: 100svh; padding: 84px var(--space-2) var(--space-2); }
+#opening .op-ground {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-5) 85%, transparent), color-mix(in srgb, var(--color-5) 30%, transparent) 70%, transparent);
+}
+#opening .op-frame { position: relative; height: 100%; }
+#opening .op-slide { position: relative; height: 100%; overflow: hidden; container-type: inline-size; }
+#opening .op-photo { position: absolute; inset: 0 42% 0 0; overflow: hidden; }
+#opening .op-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 38% 50%; filter: saturate(.4) contrast(1.06); }
+#opening .op-photo::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--color-3) 30%, transparent) 0%, color-mix(in srgb, var(--color-3) 45%, transparent) 70%, var(--color-3) 100%);
+}
+#opening .op-dim { position: absolute; inset: 0; z-index: 4; background: var(--color-3); opacity: 0; pointer-events: none; }
+#opening .op-ring {
+  position: absolute; z-index: 1; width: 64cqw; aspect-ratio: 1; left: 50%; top: 50%; margin: -32cqw 0 0 -24cqw;
+  border: 1px solid color-mix(in srgb, var(--color-1) 28%, transparent); border-radius: 50%; pointer-events: none;
+}
+#opening .op-ring__orb { position: absolute; width: 4.6cqw; left: 50%; top: 0; margin: -2.3cqw 0 0 -2.3cqw; }
+#opening .op-title { position: absolute; z-index: 2; left: 5.5%; top: 14%; right: 3%; color: var(--color-1); font-size: 10.4cqw; }
+#opening .op-line { display: block; width: max-content; max-width: 100%; font-size: min(1em, calc(86cqw / (var(--len) * .52))); }
+#opening .op-line--2 { margin-left: 2.7em; }
+#opening .op-line--3 { margin-left: 1.25em; }
+#opening .op-line__in { display: block; }
+#opening .op-meta { position: absolute; z-index: 2; right: var(--space-1); bottom: var(--space-1); width: min(400px, 36%); display: grid; gap: 22px; }
+#opening .op-meta .m-text-5 { color: var(--color-1); }
+#opening .op-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+#opening .op-s2 { position: relative; z-index: 2; min-height: 100svh; padding: 84px var(--space-2) var(--space-2); display: flex; }
+#opening .op-card {
+  position: relative; width: 74%; min-height: calc(100svh - 84px - var(--space-2)); padding: var(--space-1);
+  display: grid; grid-template-rows: auto 1fr auto; gap: 24px; container-type: inline-size;
+}
+#opening .op-title2 { position: relative; z-index: 2; font-size: min(15cqw, calc(92cqw / (var(--len) * .5))); }
+#opening .op-orb { position: absolute; z-index: 1; width: clamp(220px, 27vw, 400px); right: -9%; top: 27%; }
+#opening .op-chip { position: absolute; z-index: 2; font-size: clamp(72px, 7vw, 104px); left: 47%; top: 50%; }
+#opening .op-cols { position: relative; z-index: 2; grid-row: 3; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 28px; max-width: 600px; }
+#opening .op-cols .m-text { color: var(--color-6); }
+#opening .op-cols .m-link { grid-column: 1 / -1; justify-self: start; }
+@media (max-width: 767px) {
+  #opening .op-s1 { padding-top: 76px; }
+  #opening .op-photo { inset: 0 0 46% 0; }
+  #opening .op-photo::after { background: linear-gradient(180deg, color-mix(in srgb, var(--color-3) 30%, transparent), color-mix(in srgb, var(--color-3) 64%, transparent) 42%, color-mix(in srgb, var(--color-3) 72%, transparent) 75%, var(--color-3)); }
+  #opening .op-ring { width: 120cqw; margin: -60cqw 0 0 -70cqw; top: 46%; }
+  #opening .op-ring__orb { width: 9cqw; margin: -4.5cqw 0 0 -4.5cqw; }
+  #opening .op-title { top: 30%; left: 6%; font-size: 15.5cqw; }
+  #opening .op-line { font-size: min(1em, calc(88cqw / (var(--len) * .52))); }
+  #opening .op-line--2 { margin-left: 1.3em; }
+  #opening .op-line--3 { margin-left: .6em; }
+  #opening .op-meta { left: var(--space-1); width: auto; gap: 18px; }
+  #opening .op-s2 { padding-top: 76px; }
+  #opening .op-card { width: 100%; min-height: calc(100svh - 76px - var(--space-2)); }
+  #opening .op-title2 { font-size: min(19cqw, calc(92cqw / (var(--len) * .5))); }
+  #opening .op-card { padding-bottom: 44px; }
+  #opening .op-orb { width: 62vw; right: -22%; top: 19%; }
+  #opening .op-chip { font-size: 64px; left: var(--space-1); top: 30%; }
+  #opening .op-cols { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes op-frame-in { from { clip-path: inset(3% 2.5% 3% 2.5%); } to { clip-path: inset(0); } }
+  @keyframes op-line-in { from { transform: translateX(-.45em); } to { transform: none; } }
+  @keyframes op-orbit { to { transform: rotate(360deg); } }
+  @keyframes op-pan { from { transform: scale(1.04) translateX(0); } to { transform: scale(1.12) translateX(-3%); } }
+  #opening .op-frame { animation: op-frame-in 1s cubic-bezier(.2, .7, .1, 1) backwards; }
+  #opening .op-line__in { animation: op-line-in 1s cubic-bezier(.2, .7, .1, 1) backwards; }
+  #opening .op-line--2 .op-line__in { animation-delay: .08s; }
+  #opening .op-line--3 .op-line__in { animation-delay: .16s; }
+  #opening .op-ring { animation: op-orbit 26s linear infinite; }
+  #opening .op-photo img { animation: op-pan 9s ease-in-out infinite alternate; }
+  #opening .op-s1[data-paused] .op-ring, #opening .op-s1[data-paused] .op-photo img { animation-play-state: paused; }
+}
+}
+</style>
+<style data-8b-part="section:method">
+@layer sections {
+#method .mt-slide { width: min(100%, 1180px); margin-left: auto; display: grid; grid-template-columns: minmax(240px, 30%) 1fr; min-height: 620px; }
+#method .mt-side { position: relative; overflow: hidden; padding: var(--space-1); display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(165deg, var(--color-8), var(--color-4)); }
+#method .mt-orb { position: absolute; width: 54%; left: 30%; top: 6%; }
+#method .mt-steps { position: relative; display: grid; gap: 22px; }
+#method .mt-steps li { display: grid; grid-template-columns: 30px 1fr; gap: 6px 10px; }
+#method .mt-num { grid-row: span 2; padding-top: 5px; color: var(--color-6); }
+#method .mt-steps .m-text { color: var(--color-6); font-size: 15px; }
+#method .mt-main { padding: calc(var(--space-1) + 12px) var(--space-1) var(--space-1) clamp(24px, 4vw, 64px); display: grid; grid-template-rows: 1fr auto; gap: 48px; }
+#method .mt-title { font-size: clamp(34px, 6.1vw, 92px); }
+#method .mt-row { display: block; white-space: nowrap; }
+#method .mt-row:nth-child(2) { padding-left: 1.3em; }
+#method .mt-row:nth-child(3) { padding-left: .55em; }
+#method .mt-gap { display: inline-block; vertical-align: -.1em; margin: 0 .02em; }
+#method .mt-chip { font-size: .84em; }
+#method .mt-after { display: inline-block; }
+#method .mt-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px 40px; }
+#method .mt-foot .m-text-5 { max-width: 470px; }
+@media (max-width: 860px) {
+  #method .mt-slide { grid-template-columns: 1fr; min-height: 0; }
+  #method .mt-side { order: 2; padding-top: 140px; }
+  #method .mt-orb { width: 120px; left: auto; right: var(--space-1); top: var(--space-1); }
+  #method .mt-title { font-size: 9.6vw; }
+  #method .mt-main { padding: 36px var(--space-1) var(--space-1); gap: 32px; }
+  #method .mt-foot { flex-direction: column; align-items: flex-start; }
+}
+}
+</style>
+<style data-8b-part="section:disciplines">
+@layer sections {
+#disciplines .ds-slide { padding: var(--space-1); container-type: inline-size; }
+#disciplines .ds-title { display: flex; justify-content: space-between; gap: .3em; padding: 18px 0 clamp(28px, 4vw, 56px); font-size: min(9.6cqw, calc(88cqw / (var(--len) * .34))); }
+#disciplines .ds-grid {
+  position: relative; display: grid; gap: clamp(10px, 1.3vw, 18px);
+  grid-template-columns: repeat(6, 1fr); grid-auto-rows: clamp(110px, 11.5vw, 150px);
+  grid-template-areas:
+    "lift mark run run copy ride"
+    "swim swim run run copy ride"
+    "swim swim run run kit ride"
+    "note note court court link .";
+}
+#disciplines .ds-tile { position: relative; overflow: hidden; background: var(--color-8); }
+#disciplines .ds-tile img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.45) contrast(1.04); }
+#disciplines .ds-tile .m-badge { position: absolute; left: 10px; bottom: 10px; }
+#disciplines .ds-tile--lift { grid-area: lift; }
+#disciplines .ds-tile--mark { grid-area: mark; display: grid; place-items: center; color: var(--color-6); }
+#disciplines .ds-tile--mark svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.2; fill: none; }
+#disciplines .ds-tile--run { grid-area: run; }
+#disciplines .ds-tile--ride { grid-area: ride; }
+#disciplines .ds-tile--swim { grid-area: swim; }
+#disciplines .ds-tile--kit { grid-area: kit; }
+#disciplines .ds-tile--court { grid-area: court; }
+#disciplines .ds-tile--link { grid-area: link; display: grid; align-content: space-between; padding: 14px; background: color-mix(in srgb, var(--color-5) 35%, var(--color-8)); }
+#disciplines .ds-tile--link svg { width: 52px; height: 52px; stroke: var(--color-2); stroke-width: 1; fill: none; }
+#disciplines .ds-copy { grid-area: copy; display: grid; align-content: start; gap: 12px; padding-top: 4px; position: relative; z-index: 9; background: var(--color-1); }
+#disciplines .ds-copy .m-text { font-size: 14px; color: var(--color-6); }
+#disciplines .ds-note { grid-area: note; align-self: end; max-width: 380px; }
+@media (hover: hover) { #disciplines .ds-tile--link:hover { background: var(--color-5); } }
+@media (max-width: 860px) {
+  #disciplines .ds-title { flex-wrap: wrap; justify-content: flex-start; gap: 0 .3em; font-size: 15cqw; }
+  #disciplines .ds-grid {
+    grid-template-columns: 1fr 1fr; grid-auto-rows: 118px;
+    grid-template-areas: "run run" "run run" "lift mark" "swim swim" "ride kit" "ride link" "court court" "copy copy" "note note";
+  }
+  #disciplines .ds-copy, #disciplines .ds-note { padding-top: 12px; }
+  #disciplines .ds-grid > .ds-copy, #disciplines .ds-grid > .ds-note { grid-row: auto; }
+}
+}
+</style>
+<style data-8b-part="section:coaches">
+@layer sections {
+#coaches .co-slide { width: min(100%, 1120px); padding: var(--space-1); overflow: hidden; }
+#coaches .co-ring { position: absolute; width: min(620px, 70vw); right: -12%; top: -18%; pointer-events: none; }
+#coaches .co-ring circle { fill: none; stroke: var(--color-5); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 0; }
+#coaches .co-head { position: relative; display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px 48px; align-items: end; padding: 18px 0 clamp(36px, 5vw, 72px); }
+#coaches .co-head .m-text-5 { color: var(--color-6); }
+#coaches .co-list { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(12px, 2vw, 28px); align-items: start; }
+#coaches .co-person:nth-child(2) { margin-top: 72px; }
+#coaches .co-person:nth-child(3) { margin-top: 24px; }
+#coaches .co-person:nth-child(4) { margin-top: 112px; }
+#coaches .co-photo { overflow: hidden; aspect-ratio: 3 / 4; background: var(--color-8); }
+#coaches .co-person:nth-child(2) .co-photo { aspect-ratio: 3 / 4.6; }
+#coaches .co-person:nth-child(3) .co-photo { aspect-ratio: 1 / 1.1; }
+#coaches .co-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); }
+#coaches .co-person:nth-child(3) .co-photo img { object-position: 50% 12%; }
+#coaches figcaption { display: grid; gap: 4px; padding-top: 12px; }
+#coaches figcaption .m-text-4 { color: var(--color-6); }
+@media (max-width: 860px) {
+  #coaches .co-head { grid-template-columns: 1fr; }
+  #coaches .co-list { grid-template-columns: 1fr 1fr; }
+  #coaches .co-person:nth-child(2) { margin-top: 48px; }
+  #coaches .co-person:nth-child(3) { margin-top: 0; }
+  #coaches .co-person:nth-child(4) { margin-top: 48px; }
+}
+}
+</style>
+<style data-8b-part="section:lab">
+@layer sections {
+#lab .lb-slide { width: min(100%, 1180px); margin-left: auto; padding: var(--space-1); display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 32px; align-items: center; }
+#lab .lb-text { display: grid; gap: 22px; align-content: start; justify-items: start; padding: 18px 0; }
+#lab .lb-text .m-text { color: var(--color-5); max-width: 420px; }
+#lab .lb-stage { position: relative; width: min(100%, 640px); justify-self: center; aspect-ratio: 1; container-type: inline-size; }
+#lab .lb-lens { position: absolute; inset: 20cqw; overflow: hidden; clip-path: circle(50% at 50% 50%); }
+#lab .lb-lens img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 50%; filter: saturate(.5); }
+#lab .lb-ring { position: absolute; inset: 4cqw; width: 92cqw; height: 92cqw; overflow: visible; }
+#lab .lb-ring circle { fill: none; stroke: color-mix(in srgb, var(--color-1) 35%, transparent); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 0; }
+#lab .lb-note {
+  position: absolute; left: 50%; top: 50%; width: 30cqw; padding: 10px 12px; display: grid; gap: 4px;
+  background: var(--color-3); transform-origin: 0 0;
+  transform: rotate(var(--a)) translateX(46cqw) rotate(calc(var(--a) * -1)) translate(-50%, -50%);
+}
+#lab .lb-note .m-text-6 { font-size: clamp(17px, 1.6vw, 22px); }
+#lab .lb-note .m-text-4 { color: var(--color-5); }
+@media (max-width: 860px) {
+  #lab .lb-slide { grid-template-columns: 1fr; }
+  #lab .lb-stage { width: 100%; aspect-ratio: auto; display: grid; gap: 16px; }
+  #lab .lb-lens { position: relative; inset: auto; width: 76cqw; aspect-ratio: 1; margin: 12cqw auto; }
+  #lab .lb-ring { inset: 0 auto auto 4cqw; }
+  #lab .lb-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  #lab .lb-note { position: static; width: auto; transform: none; padding: 12px 0 0; border-top: 1px solid color-mix(in srgb, var(--color-1) 30%, transparent); }
+}
+}
+</style>
+<style data-8b-part="section:week">
+@layer sections {
+#week { padding-inline: 0; }
+#week .wk-stage { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(28px, 4vw, 48px); padding: 84px 0 var(--space-2); min-height: 100svh; align-content: center; }
+#week .wk-head { padding-inline: var(--space-2); display: grid; grid-template-columns: 1fr minmax(0, 460px); gap: 20px 48px; align-items: end; }
+#week .wk-view { min-width: 0; overflow-x: auto; padding-inline: var(--space-2); }
+#week[data-scrubbed] { height: var(--wk-height, auto); }
+#week[data-scrubbed] .wk-stage { position: sticky; top: 0; }
+#week[data-scrubbed] .wk-view { overflow: visible; }
+#week .wk-track { display: flex; gap: clamp(12px, 1.6vw, 24px); width: max-content; padding-bottom: 8px; }
+#week .wk-day { width: clamp(250px, 24vw, 330px); min-height: clamp(360px, 46vh, 440px); padding: 22px; display: flex; flex-direction: column; gap: 10px; }
+#week .wk-day--rest { background: var(--color-8); }
+#week .wk-name { color: var(--color-6); }
+#week .wk-photo { margin-top: auto; overflow: hidden; aspect-ratio: 16 / 10; }
+#week .wk-photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.45); }
+#week .wk-day .m-text { color: var(--color-6); font-size: 15px; }
+#week .wk-time { color: var(--color-2); }
+#week .wk-progress { margin-inline: var(--space-2); height: 1px; background: color-mix(in srgb, var(--color-2) 18%, transparent); }
+#week .wk-progress span { display: block; height: 100%; background: var(--color-2); transform-origin: 0 50%; }
+@media (max-width: 860px) {
+  #week .wk-head { grid-template-columns: 1fr; }
+  #week .wk-day { width: 78vw; min-height: 380px; }
+}
+}
+</style>
+<style data-8b-part="section:stories">
+@layer sections {
+#stories .st-slide { width: min(100%, 1040px); padding: var(--space-1); display: grid; gap: clamp(36px, 5vw, 72px); }
+#stories .st-label { padding-top: 6px; color: var(--color-6); }
+#stories .st-chip { display: inline-block; font-size: 1.15em; vertical-align: -.26em; margin-right: .12em; }
+#stories .st-main { display: grid; gap: 20px; max-width: 900px; }
+#stories .st-main figcaption { color: var(--color-6); }
+#stories .st-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 48px; max-width: 760px; margin-left: auto; padding-top: 24px; border-top: 1px solid var(--color-5); }
+#stories .st-notes li { display: grid; gap: 8px; }
+#stories .st-notes .m-text-4 { color: var(--color-6); }
+@media (max-width: 860px) { #stories .st-notes { grid-template-columns: 1fr; } }
+}
+</style>
+<style data-8b-part="section:recovery">
+@layer sections {
+#recovery .rc-slide { padding: var(--space-1); display: grid; grid-template-columns: 1fr minmax(0, 520px); gap: clamp(28px, 4vw, 64px); }
+#recovery .rc-text { display: grid; gap: 28px; align-content: start; padding-top: 18px; }
+#recovery .rc-row { display: block; }
+#recovery .rc-row:nth-child(2) { padding-left: 1.2em; }
+#recovery .rc-row:nth-child(3) { padding-left: .6em; }
+#recovery .rc-text .m-text-5 { max-width: 520px; color: var(--color-6); }
+#recovery .rc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; max-width: 620px; }
+#recovery .rc-list li { display: grid; gap: 4px; padding-top: 14px; border-top: 1px solid var(--color-5); }
+#recovery .rc-list .m-text { color: var(--color-6); font-size: 15px; }
+#recovery .rc-window { position: relative; overflow: hidden; aspect-ratio: 4 / 5; align-self: stretch; }
+#recovery .rc-sky { position: absolute; inset: 0 0 40% 0; overflow: hidden; background: var(--color-3); }
+#recovery .rc-cool { position: absolute; inset: 0; background: linear-gradient(180deg, var(--color-5), var(--color-8)); }
+#recovery .rc-sun { position: absolute; width: 46%; left: 27%; bottom: 0; translate: 0 46%; }
+#recovery .rc-sea { position: absolute; inset: 60% 0 0 0; }
+#recovery .rc-sea img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; filter: saturate(.6); }
+@media (max-width: 860px) {
+  #recovery .rc-slide { grid-template-columns: 1fr; }
+  #recovery .rc-window { aspect-ratio: 1; order: -1; }
+  #recovery .rc-list { grid-template-columns: 1fr; }
+}
+}
+</style>
+<style data-8b-part="section:membership">
+@layer sections {
+#membership .mb-slide { width: min(100%, 1180px); margin-left: auto; padding: var(--space-1); overflow: hidden; }
+#membership .mb-ring { position: absolute; width: min(560px, 80vw); left: -14%; bottom: -30%; pointer-events: none; }
+#membership .mb-ring circle { fill: none; stroke: var(--color-5); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 0; }
+#membership .mb-head { position: relative; display: grid; grid-template-columns: 1fr minmax(0, 440px); gap: 20px 48px; align-items: end; padding: 18px 0 clamp(32px, 4vw, 56px); }
+#membership .mb-head .m-text-5 { color: var(--color-6); }
+#membership .mb-plans { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--color-5); }
+#membership .mb-plan { display: flex; flex-direction: column; gap: 18px; padding: 24px; background: var(--color-1); }
+#membership .mb-plan + .mb-plan { border-left: 1px solid var(--color-5); }
+#membership .mb-plan--featured { background: var(--color-3); color: var(--color-1); border-left-color: var(--color-3); }
+#membership .mb-plan--featured :focus-visible { outline-color: var(--color-1); }
+#membership .mb-price { display: flex; align-items: baseline; gap: 8px; }
+#membership .mb-price .m-text-3 { font-size: clamp(36px, 3.6vw, 52px); line-height: 1; }
+#membership .mb-for { color: var(--color-6); }
+#membership .mb-plan--featured .mb-for { color: var(--color-5); }
+#membership .mb-inc { display: grid; margin-bottom: auto; }
+#membership .mb-inc li { padding: 10px 0; border-top: 1px solid color-mix(in srgb, currentColor 18%, transparent); font-size: 15px; }
+#membership .mb-plan .m-btn, #membership .mb-plan .m-btn-2 { align-self: flex-start; }
+@media (max-width: 860px) {
+  #membership .mb-head { grid-template-columns: 1fr; }
+  #membership .mb-plans { grid-template-columns: 1fr; }
+  #membership .mb-plan + .mb-plan { border-left: 0; border-top: 1px solid var(--color-5); }
+}
+}
+</style>
+<style data-8b-part="section:faq">
+@layer sections {
+#faq .fq-slide { width: min(100%, 1080px); padding: var(--space-1); }
+#faq .fq-head { display: grid; grid-template-columns: 1fr minmax(0, 400px); gap: 20px 48px; align-items: end; padding: 18px 0 clamp(32px, 4vw, 56px); }
+#faq .fq-head .m-text { color: var(--color-6); }
+#faq .fq-body { display: grid; grid-template-columns: clamp(36px, 5vw, 72px) 1fr; gap: clamp(16px, 3vw, 40px); }
+#faq .fq-rail { position: relative; justify-self: center; width: 1px; background: var(--color-5); }
+#faq .fq-ball { position: absolute; left: 50%; top: 0; width: clamp(30px, 3.4vw, 44px); margin-left: calc(clamp(30px, 3.4vw, 44px) / -2); }
+#faq .fq-ball::after { content: ""; position: absolute; inset: 10%; border-radius: 50%; border: 1.5px solid var(--color-1); border-left-color: transparent; border-right-color: transparent; }
+#faq .fq-list { border-top: 1px solid var(--color-5); }
+#faq .fq-item { border-bottom: 1px solid var(--color-5); }
+#faq .fq-item summary { list-style: none; display: flex; justify-content: space-between; gap: 24px; padding: 20px 0; cursor: pointer; }
+#faq .fq-item summary::-webkit-details-marker { display: none; }
+#faq .fq-item summary::after { content: ""; flex: none; width: 13px; height: 13px; margin-top: .4em; background: linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat, linear-gradient(currentColor, currentColor) center / 1px 100% no-repeat; transition: transform .3s; }
+#faq .fq-item[open] summary::after { transform: rotate(45deg); }
+#faq .fq-item .m-text { max-width: 640px; padding-bottom: 22px; color: var(--color-6); }
+@media (max-width: 860px) { #faq .fq-head { grid-template-columns: 1fr; } #faq .fq-body { grid-template-columns: 28px 1fr; gap: 14px; } #faq .fq-ball { width: 26px; margin-left: -13px; } }
+}
+</style>
+<style data-8b-part="section:contact">
+@layer sections {
+#contact .ct-slide { padding: var(--space-1); }
+#contact .ct-run { position: relative; display: flex; justify-content: flex-end; padding: 18px 0 18px; }
+#contact .ct-title { font-size: clamp(38px, 7.4vw, 112px); white-space: nowrap; }
+#contact .ct-line { position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--color-2); transform-origin: 0 50%; }
+#contact .ct-grid { display: grid; grid-template-columns: 1fr minmax(0, 560px); gap: 40px 64px; padding-top: clamp(32px, 4vw, 56px); }
+#contact .ct-info { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 32px; align-content: start; }
+#contact .ct-info dt { color: var(--color-6); margin-bottom: 6px; }
+#contact .ct-info dd { margin: 0; }
+#contact .ct-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+#contact .ct-form .ct-wide, #contact .ct-form .ct-send { grid-column: 1 / -1; }
+#contact .ct-send { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
+#contact .ct-status { color: var(--color-6); }
+@media (max-width: 860px) {
+  #contact .ct-title { font-size: 10vw; }
+  #contact .ct-grid, #contact .ct-info, #contact .ct-form { grid-template-columns: 1fr; }
+}
+}
+</style>
+<style data-8b-part="section:footer">
+@layer sections {
+#footer { padding: var(--space-3) var(--space-2) var(--space-2); }
+#footer .ft-slide { padding: var(--space-1); container-type: inline-size; overflow: hidden; }
+#footer .ft-word { display: block; pointer-events: none; width: max-content; padding: 18px 0 clamp(28px, 4vw, 56px); font-size: calc(97cqw / (var(--len) * .37)); line-height: .8; white-space: nowrap; }
+#footer .ft-cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 28px 32px; padding-top: 24px; border-top: 1px solid color-mix(in srgb, var(--color-1) 25%, transparent); }
+#footer .ft-cols .m-text, #footer .ft-cols .m-text-4 { color: var(--color-5); }
+#footer .ft-cols ul { display: grid; gap: 8px; align-content: start; }
+#footer .ft-legal { align-self: end; }
+@media (max-width: 860px) { #footer .ft-cols { grid-template-columns: 1fr 1fr; } #footer .ft-cols > .m-text { grid-column: 1 / -1; } }
+}
+</style>
+</head>
+<body>
+<!-- navigation: top bar: wordmark, a short tagline, section links, Book a test button; phone menu overlay -->
+<header id="navigation" data-8b-section="navigation">
+  <div class="nav__bar">
+    <a class="nav__logo" href="#opening" aria-label="Arcline, back to the top">arcline<sup>®</sup></a>
+    <p class="nav__line m-text-4">Measured training for five sports</p>
+    <nav aria-label="Main">
+      <ul class="nav__links">
+        <li><a class="m-link" href="#method">Method</a></li>
+        <li><a class="m-link" href="#disciplines">Sports</a></li>
+        <li><a class="m-link" href="#lab">Lab</a></li>
+        <li><a class="m-link" href="#week">Week</a></li>
+        <li><a class="m-link" href="#membership">Membership</a></li>
+        <li><a class="m-link" href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <a class="m-btn nav__cta" href="#contact"><span class="m-btn__label">Book a test</span></a>
+    <button class="m-iconbtn nav__menu" type="button" aria-expanded="false" aria-controls="menu"><span class="sr-only">Open the menu</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 9h16M4 15h16"/></svg></button>
+  </div>
+  <div class="menu" id="menu" data-lenis-prevent hidden>
+    <button class="m-iconbtn menu__close" type="button"><span class="sr-only">Close the menu</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <nav aria-label="Menu">
+      <ul class="menu__links">
+        <li><a class="m-text-3" href="#method">Method</a></li>
+        <li><a class="m-text-3" href="#disciplines">Sports</a></li>
+        <li><a class="m-text-3" href="#lab">Lab</a></li>
+        <li><a class="m-text-3" href="#week">Week</a></li>
+        <li><a class="m-text-3" href="#membership">Membership</a></li>
+        <li><a class="m-text-3" href="#faq">FAQ</a></li>
+        <li><a class="m-text-3" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="m-btn-2 menu__cta" href="#contact"><span class="m-btn__label">Book a test</span></a>
+  </div>
+</header>
+<main>
+<!-- opening: two-screen opening: a navy cover slide with a photo and a three-line stepped headline, then a pale manifesto slide (demo: racket photo, "Only forward®") (animation: scene:opening) -->
+<section id="opening" data-8b-section="opening" aria-labelledby="opening-title">
+  <div class="op-s1">
+    <div class="op-ground" aria-hidden="true"></div>
+    <div class="op-frame">
+      <div class="op-slide m-slide-2">
+        <div class="op-photo"><img style="background:#26738c" src="https://images.unsplash.com/photo-1650496760462-cb983aca287d?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8OHx8dGVubmlzJTIwcmFja2V0JTIwYmFsbHxlbnwxfDB8fHwxNzkxMjMyMTU4fDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=1060&amp;q=60" alt="A tennis racket and ball lying on a blue court" width="1600" height="1025" fetchpriority="high"></div>
+        <div class="op-ring" aria-hidden="true"><span class="op-ring__orb m-orb"></span></div>
+        <h1 class="op-title m-text-2" id="opening-title">
+          <span class="op-line op-line--1" style="--len:11"><span class="op-line__in">Faster than</span></span>
+          <span class="op-line op-line--2" style="--len:8"><span class="op-line__in">your own</span></span>
+          <span class="op-line op-line--3" style="--len:6"><span class="op-line__in">shadow</span></span>
+        </h1>
+        <div class="op-meta">
+          <p class="m-text-5">A performance club with its own lab for runners, riders, swimmers, court players and lifters who want measured progress, not more hours.</p>
+          <div class="op-actions">
+            <a class="m-btn-2" href="#contact"><span class="m-btn__label">Book a test</span></a>
+            <a class="m-link" href="#membership">See membership</a>
+          </div>
+        </div>
+        <div class="op-dim" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+  <div class="op-s2">
+    <div class="op-card m-slide-3">
+      <h2 class="op-title2 m-text-2" style="--len:13">Only forward<sup>®</sup></h2>
+      <span class="op-orb m-orb" aria-hidden="true"></span>
+      <img style="background:#c0c0c0" class="op-chip m-chip" src="https://images.unsplash.com/photo-1726195221766-e4594ff9d025?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Mnx8ZmVtYWxlJTIwYXRobGV0ZSUyMHBvcnRyYWl0fGVufDF8MXx8fDE3OTEyMzIyMjV8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=110&amp;h=110&amp;q=60" alt="" width="400" height="400" loading="lazy">
+      <div class="op-cols">
+        <p class="m-text">Every member starts with a lab test and leaves each block with a retest. The plan in between is written from those numbers, not from a template.</p>
+        <p class="m-text">One coach, one engine, five sports. Whether you chase a marathon, a tie-break or a deadlift, the work is measured the same way.</p>
+        <a class="m-link" href="#method">How the method works</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- method: how it works: three numbered steps beside a big heading with round photos set into its lines (demo: Test, Train, Transfer) (animation: scene:method) -->
+<section id="method" class="l-sec" data-8b-section="method" aria-labelledby="method-title">
+  <div class="mt-slide m-slide">
+    <div class="mt-side">
+      <span class="mt-orb m-orb" aria-hidden="true"></span>
+      <ol class="mt-steps" data-8b-motion="rise">
+        <li><span class="mt-num m-text-4">01</span><h3 class="m-text-6">Test</h3><p class="m-text">Two hours in the lab: threshold, VO₂, gait or stroke on video and your strength ratios.</p></li>
+        <li><span class="mt-num m-text-4">02</span><h3 class="m-text-6">Train</h3><p class="m-text">Twelve weeks written from those numbers and adjusted every Sunday by your coach.</p></li>
+        <li><span class="mt-num m-text-4">03</span><h3 class="m-text-6">Transfer</h3><p class="m-text">Race-specific blocks, then a retest, so the gain shows up where it counts: on the clock.</p></li>
+      </ol>
+    </div>
+    <div class="mt-main">
+      <h2 class="mt-title m-text-3" id="method-title">
+        <span class="mt-row">Tested <span class="mt-gap"><img style="background:#262626" class="mt-chip m-chip" src="https://images.unsplash.com/photo-1726195221775-e1d394a19f02?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8ZmVtYWxlJTIwYXRobGV0ZSUyMHBvcnRyYWl0fGVufDF8MXx8fDE3OTEyMzIyMjV8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=70&amp;h=70&amp;q=60" alt="" width="240" height="240" loading="lazy"></span> <span class="mt-after">Monday.</span></span>
+        <span class="mt-row">Faster <span class="mt-gap"><img style="background:#0c2626" class="mt-chip m-chip" src="https://images.unsplash.com/photo-1637071692126-d0ee7df18271?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Nnx8dGVubmlzJTIwcGxheWVyJTIwc2VydmV8ZW58MXwxfHx8MTc5MTIzMjIyNXww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=70&amp;h=70&amp;q=60" alt="" width="240" height="240" loading="lazy"></span> <span class="mt-after">by</span></span>
+        <span class="mt-row">spring <span class="mt-gap"><img style="background:#8c8ca6" class="mt-chip m-chip" src="https://images.unsplash.com/photo-1650805174807-22bc9bc0f608?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8OXx8Y3ljbGlzdCUyMG1vdGlvbiUyMGJsdXJ8ZW58MXwxfHx8MTc5MTIzMjE1OXww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=70&amp;h=70&amp;q=60" alt="" width="240" height="240" loading="lazy"></span></span>
+      </h2>
+      <div class="mt-foot">
+        <p class="m-text-5">Every block starts with a measurement and ends with a retest. You see what changed in numbers you can check, not in a feeling after a hard week.</p>
+        <a class="m-btn" href="#lab"><span class="m-btn__label">Inside the lab</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- disciplines: a three-word line over a collage of tiles, one per activity, plus a link tile (demo: strength, running, cycling, swimming, gait fitting, court sports) (animation: scene:disciplines) -->
+<section id="disciplines" class="l-sec" data-8b-section="disciplines" aria-labelledby="disciplines-title">
+  <div class="ds-slide m-slide">
+    <h2 class="ds-title m-text-3" id="disciplines-title" style="--len:22" data-8b-motion="streak"><span>Breathe.</span> <span>Move.</span> <span>Repeat.</span></h2>
+    <div class="ds-grid">
+      <figure class="ds-tile ds-tile--lift"><img style="background:#262626" src="https://images.unsplash.com/photo-1733517301178-312a6f694f2d?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NHx8ZHVtYmJlbGxzJTIwZ3ltfGVufDF8Mnx8fDE3OTEyMzIyMjR8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=250&amp;q=60" alt="An athlete bench-pressing a barbell in a dark gym" width="600" height="636" loading="lazy"><figcaption class="m-badge">Strength</figcaption></figure>
+      <div class="ds-tile ds-tile--mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></div>
+      <figure class="ds-tile ds-tile--run"><img style="background:#73738c" src="https://images.unsplash.com/photo-1759674861540-afed9f86f94a?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Mnx8cnVubmVyJTIwbW90aW9uJTIwYmx1cnxlbnwxfDF8fHwxNzkxMjMyMTU5fDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=520&amp;q=60" alt="Runners in a race, blurred by their speed" width="900" height="1350" loading="lazy"><figcaption class="m-badge">Running</figcaption></figure>
+      <div class="ds-copy">
+        <p class="m-text">Run, ride, swim, court, strength. The sport changes; the questions don't: where your threshold sits, what limits it and what moves it fastest.</p>
+        <p class="m-text">Mixed weeks are welcome. One engine profile serves every sport you train.</p>
+      </div>
+      <figure class="ds-tile ds-tile--ride"><img style="background:#a6a6a6" src="https://images.unsplash.com/photo-1715900677967-fb67cee16359?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8Y3ljbGlzdCUyMG1vdGlvbiUyMGJsdXJ8ZW58MXwxfHx8MTc5MTIzMjE1OXww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=380&amp;q=60" alt="A cyclist riding fast along a blurred path" width="600" height="750" loading="lazy"><figcaption class="m-badge">Cycling</figcaption></figure>
+      <figure class="ds-tile ds-tile--swim"><img style="background:#262640" src="https://images.unsplash.com/photo-1461567933755-6c82be2197da?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NHx8c3dpbW1lciUyMHVuZGVyd2F0ZXIlMjBibHVlfGVufDF8MHx8fDE3OTEyMzIxODN8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=560&amp;q=60" alt="A swimmer gliding underwater along a pool lane" width="900" height="506" loading="lazy"><figcaption class="m-badge">Swimming</figcaption></figure>
+      <figure class="ds-tile ds-tile--kit"><img style="background:#d9d9d9" src="https://images.unsplash.com/photo-1591700151209-540626cf808c?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NHx8d2hpdGUlMjBydW5uaW5nJTIwc2hvZSUyMG1pbmltYWx8ZW58MXwyfHx8MTc5MTIzMjE4NHww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=250&amp;q=60" alt="White sneakers stepping across a pale floor" width="500" height="469" loading="lazy"><figcaption class="m-badge">Gait fitting</figcaption></figure>
+      <figure class="ds-tile ds-tile--court"><img style="background:#73a6c0" src="https://images.unsplash.com/photo-1714841197541-aa64d90cb6a8?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8dGVubmlzJTIwcGxheWVyJTIwc2VydmV8ZW58MXwxfHx8MTc5MTIzMjIyNXww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=520&amp;q=60" alt="A tennis player swinging on a blue and green court" width="900" height="1013" loading="lazy"><figcaption class="m-badge">Court sports</figcaption></figure>
+      <a class="ds-tile ds-tile--link" href="#week"><svg aria-hidden="true" viewBox="0 0 52 52"><circle cx="26" cy="26" r="25"/><path d="M18 26h16M28 20l6 6-6 6"/></svg><span class="m-text-4">See a training week</span></a>
+      <p class="ds-note m-text-6">Bring the sport you love. We bring the lab, the plan and a coach who has raced it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- coaches: four coach portraits of different heights with names and roles -->
+<section id="coaches" class="l-sec" data-8b-section="coaches" aria-labelledby="coaches-title">
+  <div class="co-slide m-slide-3">
+    <svg class="co-ring" data-8b-motion="orbit" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="199" pathLength="1"/><circle cx="200" cy="200" r="140" pathLength="1"/></svg>
+    <div class="co-head">
+      <h2 class="m-text-3" id="coaches-title" data-8b-motion="streak">Coached by people who still race</h2>
+      <p class="m-text-5">Every coach holds a sport-science degree and a current race licence. You keep the same coach from the first test to the last retest.</p>
+    </div>
+    <ul class="co-list">
+      <li class="co-person"><figure><div class="co-photo"><img style="background:#262626" data-8b-motion="focus" src="https://images.unsplash.com/photo-1764854562264-aeb31b72ac3f?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NXx8YXRobGV0ZSUyMHBvcnRyYWl0JTIwc3R1ZGlvJTIwZGFya3xlbnwxfDF8fHwxNzkxMjMyMTgzfDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=270&amp;q=60" alt="Portrait of coach Daniel Okafor with his arms crossed" width="600" height="750" loading="lazy"></div><figcaption><strong class="m-text-6">Daniel Okafor</strong><span class="m-text-4">Head coach · running and triathlon</span></figcaption></figure></li>
+      <li class="co-person"><figure><div class="co-photo"><img style="background:#262626" data-8b-motion="focus" src="https://images.unsplash.com/photo-1788500657746-62783573819c?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8YXRobGV0ZSUyMHBvcnRyYWl0JTIwc3R1ZGlvJTIwZGFya3xlbnwxfDF8fHwxNzkxMjMyMTgzfDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=260&amp;q=60" alt="Portrait of coach Maya Ferreira looking over her shoulder" width="600" height="900" loading="lazy"></div><figcaption><strong class="m-text-6">Maya Ferreira</strong><span class="m-text-4">Court sports and strength</span></figcaption></figure></li>
+      <li class="co-person"><figure><div class="co-photo"><img style="background:#262626" data-8b-motion="focus" src="https://images.unsplash.com/photo-1674736384543-9842d8ac7484?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NXx8c3BvcnRzbWFuJTIwcG9ydHJhaXQlMjBibGFjayUyMGJhY2tncm91bmQlMjB0LXNoaXJ0fGVufDF8MXx8fDE3OTEyNzI1NDJ8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=250&amp;q=60" alt="Coach Tomas Lindqvist in profile, smiling, in a dark studio" width="600" height="900" loading="lazy"></div><figcaption><strong class="m-text-6">Tomas Lindqvist</strong><span class="m-text-4">Lab lead · cycling</span></figcaption></figure></li>
+      <li class="co-person"><figure><div class="co-photo"><img style="background:#c0c0c0" data-8b-motion="focus" src="https://images.unsplash.com/photo-1726195221849-b92352fcc89e?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8M3x8ZmVtYWxlJTIwYXRobGV0ZSUyMHBvcnRyYWl0fGVufDF8MXx8fDE3OTEyMzIyMjV8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=250&amp;q=60" alt="Coach Ines Varga stretching before a session" width="600" height="900" loading="lazy"></div><figcaption><strong class="m-text-6">Ines Varga</strong><span class="m-text-4">Swimming and mobility</span></figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<!-- lab: a feature block: text on the left, a round photo ringed by four labelled measures on the right (demo: test lab, VO₂ max, threshold) (animation: scene:lab) -->
+<section id="lab" class="l-sec" data-8b-section="lab" aria-labelledby="lab-title">
+  <div class="lb-slide m-slide-2">
+    <div class="lb-text">
+      <h2 class="m-text-3" id="lab-title">What the lab sees</h2>
+      <p class="m-text-5">Four measures decide most of your plan. We read them on the treadmill, the bike, in the flume or on court, then again at every retest.</p>
+      <p class="m-text">Breath gas, blood lactate, force plates and video at 240 frames a second. The report is yours the same day, in plain words and in the raw files.</p>
+      <a class="m-link" href="#contact">Book a lab test</a>
+    </div>
+    <div class="lb-stage">
+      <div class="lb-lens"><img style="background:#d9d9d9" src="https://images.unsplash.com/photo-1638183395699-2c0db5b6afbb?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8dHJlYWRtaWxsJTIwcnVubmluZyUyMHRlc3QlMjBsYWJ8ZW58MXwwfHx8MTc5MTIzMjE4NHww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=590&amp;q=60" alt="An athlete running on a treadmill in a bright test lab" width="900" height="600" loading="lazy"></div>
+      <svg class="lb-ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
+      <ul class="lb-notes">
+        <li class="lb-note" style="--a:-38deg"><strong class="m-text-6">VO₂ max</strong><span class="m-text-4">The ceiling of your engine</span></li>
+        <li class="lb-note" style="--a:38deg"><strong class="m-text-6">Threshold</strong><span class="m-text-4">The pace you can hold for an hour</span></li>
+        <li class="lb-note" style="--a:142deg"><strong class="m-text-6">Gait and stroke</strong><span class="m-text-4">Video, frame by frame</span></li>
+        <li class="lb-note" style="--a:218deg"><strong class="m-text-6">Strength ratios</strong><span class="m-text-4">Left to right, push to pull</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- week: weekly schedule: seven day cards in a row that runs sideways as you scroll, with a progress line (animation: scene:week) -->
+<section id="week" class="l-sec" data-8b-section="week" aria-labelledby="week-title">
+  <div class="wk-stage">
+    <div class="wk-head">
+      <h2 class="m-text-3" id="week-title" data-8b-motion="streak">A week at Arcline</h2>
+      <p class="m-text-5">Sessions run before work and after it, so training fits a life instead of replacing it. Most members mix three sports in one week.</p>
+    </div>
+    <div class="wk-view">
+      <ol class="wk-track">
+        <li class="wk-day m-slide"><h3 class="m-text-6">Monday</h3><p class="m-text-5">Retest and easy spin</p><p class="m-text wk-time">06:30 · Lab and bike room</p><p class="m-text">A short read of last week's data with your coach, then forty easy minutes.</p><div class="wk-photo"><img style="background:#d9d9d9" src="https://images.unsplash.com/photo-1637714409323-d5e6e9731252?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Nnx8dHJlYWRtaWxsJTIwcnVubmluZyUyMHRlc3QlMjBsYWJ8ZW58MXwwfHx8MTc5MTIzMjE4NHww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="An athlete walking on a treadmill in a white studio" width="600" height="400" loading="lazy"></div></li>
+        <li class="wk-day m-slide"><h3 class="m-text-6">Tuesday</h3><p class="m-text-5">Track intervals</p><p class="m-text wk-time">06:30 · Outdoor track</p><p class="m-text">Threshold repeats paced from your lab numbers, in groups of four.</p><div class="wk-photo"><img style="background:#d9d9d9" src="https://images.unsplash.com/photo-1744706908605-ac30eb45f98c?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Nnx8cnVubmVyJTIwbW90aW9uJTIwYmx1cnxlbnwxfDF8fHwxNzkxMjMyMTU5fDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="A runner in motion against a blurred street" width="600" height="400" loading="lazy"></div></li>
+        <li class="wk-day m-slide"><h3 class="m-text-6">Wednesday</h3><p class="m-text-5">Strength and mobility</p><p class="m-text wk-time">18:00 · Gym floor</p><p class="m-text">Heavy, short and technical: the lifts that protect a season, coached rep by rep.</p><div class="wk-photo"><img style="background:#262626" src="https://images.unsplash.com/photo-1706029831405-619b27e3260c?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8ZGVhZGxpZnQlMjBiYXJiZWxsfGVufDF8MHx8fDE3OTEyNzM3NDZ8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="An athlete setting up a deadlift, hands on the bar and feet under it" width="600" height="400" loading="lazy"></div></li>
+        <li class="wk-day m-slide"><h3 class="m-text-6">Thursday</h3><p class="m-text-5">Pool technique</p><p class="m-text wk-time">07:00 · 25 m pool</p><p class="m-text">Stroke video on the deck, drills in the water, one change at a time.</p><div class="wk-photo"><img style="background:#0c2626" src="https://images.unsplash.com/photo-1710739513833-48b074290a8e?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8M3x8c3dpbW1lciUyMGZyZWVzdHlsZSUyMHN0cm9rZSUyMHBvb2x8ZW58MXwwfHx8MTc5MTI3MjM1Mnww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="A swimmer in a white cap mid butterfly stroke in a dark pool" width="600" height="400" loading="lazy"></div></li>
+        <li class="wk-day wk-day--rest m-slide"><h3 class="m-text-6">Friday</h3><p class="m-text-5">Rest, sauna and cold</p><p class="m-text wk-time">Any time · Recovery suite</p><p class="m-text">The day the training turns into fitness. Book the plunge or just sleep in.</p><div class="wk-photo"><img style="background:#f3f3f3" src="https://images.unsplash.com/photo-1712659606957-b7395ba9ebb2?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NXx8c2F1bmElMjB3b29kZW4lMjBpbnRlcmlvcnxlbnwxfDB8fHwxNzkxMjczNzI5fDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="A dark wooden sauna with a window onto snow" width="600" height="400" loading="lazy"></div></li>
+        <li class="wk-day m-slide"><h3 class="m-text-6">Saturday</h3><p class="m-text-5">Long ride or long run</p><p class="m-text wk-time">08:00 · From the club</p><p class="m-text">Steady hours with a coach on the bike, coffee at the turn.</p><div class="wk-photo"><img style="background:#d9d9d9" src="https://images.unsplash.com/photo-1744706908540-c7450689a30a?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Mnx8Y3ljbGlzdCUyMG1vdGlvbiUyMGJsdXJ8ZW58MXwxfHx8MTc5MTIzMjE1OXww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="A rider blurred by speed in black and white" width="600" height="400" loading="lazy"></div></li>
+        <li class="wk-day m-slide"><h3 class="m-text-6">Sunday</h3><p class="m-text-5">Court drills and review</p><p class="m-text wk-time">10:00 · Courts 1–3</p><p class="m-text">Footwork and serve work, then ten minutes on the week ahead.</p><div class="wk-photo"><img style="background:#0cc0f3" src="https://images.unsplash.com/photo-1646503429996-3b7df2706145?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8dGVubmlzJTIwcmFja2V0JTIwYmx1ZSUyMHNoYWRvd3xlbnwxfDB8fHwxNzkxMjMyMTgyfDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="A tennis player standing on a bright blue court" width="600" height="400" loading="lazy"></div></li>
+      </ol>
+    </div>
+    <div class="wk-progress" aria-hidden="true"><span></span></div>
+  </div>
+</section>
+
+<!-- stories: testimonials: one large quote with a round portrait in its first line and two short quotes -->
+<section id="stories" class="l-sec" data-8b-section="stories" aria-labelledby="stories-title">
+  <div class="st-slide m-slide-3">
+    <h2 class="st-label m-text-6" id="stories-title">Members, retested</h2>
+    <figure class="st-main">
+      <blockquote data-8b-motion="streak" data-from="left"><p class="m-text-7"><img style="background:#595959" class="st-chip m-chip" data-8b-motion="focus" src="https://images.unsplash.com/photo-1726195222148-fc8a7e7f37fa?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NHx8ZmVtYWxlJTIwYXRobGV0ZSUyMHBvcnRyYWl0fGVufDF8MXx8fDE3OTEyMzIyMjV8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=60&amp;h=60&amp;q=60" alt="Portrait of member Lena Brandt on a running track" width="240" height="240" loading="lazy">“I stopped adding hours and started reading my numbers. Twelve weeks later I ran my half nine minutes faster, on less mileage.”</p></blockquote>
+      <figcaption class="m-text-4">Lena Brandt · half marathon, 1:41 to 1:32</figcaption>
+    </figure>
+    <ul class="st-notes" data-8b-motion="rise">
+      <li><p class="m-text">“The gait video found in ten minutes what three seasons of sore shins never told me: my left foot.”</p><p class="m-text-4">Samir Haddad · trail runner</p></li>
+      <li><p class="m-text">“The strength block alone put real pace on my serve. My doubles partner noticed before I did.”</p><p class="m-text-4">Julia Moretti · club tennis</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- recovery: a stepped heading, a lead and four services in two columns, beside a window of sky over calm water (demo: recovery suite) (animation: scene:recovery) -->
+<section id="recovery" class="l-sec" data-8b-section="recovery" aria-labelledby="recovery-title">
+  <div class="rc-slide m-slide">
+    <div class="rc-text">
+      <h2 class="m-text-3" id="recovery-title"><span class="rc-row">Recovery</span> <span class="rc-row">is part of</span> <span class="rc-row">the rep</span></h2>
+      <p class="m-text-5">Adaptation happens after the session. The recovery suite is open to every member, and your coach books it into your week like any interval.</p>
+      <ul class="rc-list">
+        <li><strong class="m-text-6">Cold plunge</strong><span class="m-text">Four degrees, three minutes, after the hard days.</span></li>
+        <li><strong class="m-text-6">Sauna</strong><span class="m-text">Heat blocks before races in warm weather.</span></li>
+        <li><strong class="m-text-6">Physio</strong><span class="m-text">Weekly slots, booked by your coach before a niggle becomes an injury.</span></li>
+        <li><strong class="m-text-6">Sleep coaching</strong><span class="m-text">Heart-rate variability and sleep read every morning.</span></li>
+      </ul>
+    </div>
+    <div class="rc-window">
+      <div class="rc-sky" aria-hidden="true"><div class="rc-cool"></div><span class="rc-sun m-orb"></span></div>
+      <div class="rc-sea"><img style="background:#265973" src="https://images.unsplash.com/photo-1620239863785-603b0ea879b6?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8Y2FsbSUyMHdhdGVyJTIwc3VyZmFjZSUyMHJpcHBsZXMlMjBkYXJrJTIwYmx1ZXxlbnwxfDB8fHwxNzkxMjcyNDYwfDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=520&amp;q=60" alt="Calm blue water, pale in the distance, with slow rings spreading across it" width="900" height="600" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- membership: pricing: three plans in ruled columns, the middle one highlighted -->
+<section id="membership" class="l-sec" data-8b-section="membership" aria-labelledby="membership-title">
+  <div class="mb-slide m-slide">
+    <svg class="mb-ring" data-8b-motion="orbit" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="199" pathLength="1"/><circle cx="200" cy="200" r="150" pathLength="1"/></svg>
+    <div class="mb-head">
+      <h2 class="m-text-3" id="membership-title" data-8b-motion="streak">Membership</h2>
+      <p class="m-text-5">Every plan includes the entry test. Billed monthly, no joining fee, pause any time for injury or travel.</p>
+    </div>
+    <div class="mb-plans" data-8b-motion="rise">
+      <article class="mb-plan">
+        <h3 class="m-text-6">Base</h3>
+        <p class="mb-price"><strong class="m-text-3">€89</strong><span class="m-text-4">a month</span></p>
+        <p class="mb-for m-text">For one sport and steady progress.</p>
+        <ul class="mb-inc"><li class="m-text">Entry lab test</li><li class="m-text">Three group sessions a week</li><li class="m-text">Plan reviewed every month</li><li class="m-text">Data dashboard and app</li></ul>
+        <a class="m-btn" href="#contact"><span class="m-btn__label">Start Base</span></a>
+      </article>
+      <article class="mb-plan mb-plan--featured">
+        <h3 class="m-text-6">Build</h3>
+        <p class="mb-price"><strong class="m-text-3">€159</strong><span class="m-text-4">a month</span></p>
+        <p class="mb-for m-text">For a race already on the calendar.</p>
+        <ul class="mb-inc"><li class="m-text">Everything in Base</li><li class="m-text">A coach-written twelve-week block</li><li class="m-text">Retest at the end of each block</li><li class="m-text">Pool, track and courts without limits</li></ul>
+        <a class="m-btn-2" href="#contact"><span class="m-btn__label">Start Build</span></a>
+      </article>
+      <article class="mb-plan">
+        <h3 class="m-text-6">Peak</h3>
+        <p class="mb-price"><strong class="m-text-3">€249</strong><span class="m-text-4">a month</span></p>
+        <p class="mb-for m-text">For athletes who want every detail.</p>
+        <ul class="mb-inc"><li class="m-text">Everything in Build</li><li class="m-text">Personal coach and a weekly call</li><li class="m-text">Retest every eight weeks</li><li class="m-text">Physio and the recovery suite</li></ul>
+        <a class="m-btn" href="#contact"><span class="m-btn__label">Start Peak</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- faq: questions and answers (native <details>) beside a rail with a rolling ball (animation: scene:faq) -->
+<section id="faq" class="l-sec" data-8b-section="faq" aria-labelledby="faq-title">
+  <div class="fq-slide m-slide-3">
+    <div class="fq-head">
+      <h2 class="m-text-3" id="faq-title">Before your first test</h2>
+      <p class="m-text">Still unsure? Call the club and a coach will answer, usually the one you'll train with.</p>
+    </div>
+    <div class="fq-body">
+      <div class="fq-rail" aria-hidden="true"><span class="fq-ball m-orb"></span></div>
+      <div class="fq-list">
+        <details class="fq-item"><summary class="m-text-6">Do I need to be fit already?</summary><p class="m-text">No. The first test sets your starting point, whatever it is. Most members start from three sessions a week or fewer.</p></details>
+        <details class="fq-item"><summary class="m-text-6">What happens in the lab test?</summary><p class="m-text">Two hours: a short interview, a ramp test on a treadmill, bike or in the flume with breath gas and lactate readings, a gait or stroke video and a strength screen. You leave with a report the same day.</p></details>
+        <details class="fq-item"><summary class="m-text-6">Can I train for more than one sport?</summary><p class="m-text">Yes. Plans are built from one engine profile, so a runner who also plays tennis gets one week that serves both.</p></details>
+        <details class="fq-item"><summary class="m-text-6">How often do I retest?</summary><p class="m-text">At the end of every block: twelve weeks on Base and Build, eight on Peak.</p></details>
+        <details class="fq-item"><summary class="m-text-6">Can I pause my membership?</summary><p class="m-text">Any time, for injury, travel or a new baby. Your data and your plan wait for you.</p></details>
+        <details class="fq-item"><summary class="m-text-6">Is there parking and a shower?</summary><p class="m-text">Bike racks, ten parking spaces and showers with towels at the club.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- contact: booking: a heading on a line across the slide, address, hours, phone, email and a short form (placeholders) (animation: scene:contact) -->
+<section id="contact" class="l-sec" data-8b-section="contact" aria-labelledby="contact-title">
+  <div class="ct-slide m-slide">
+    <div class="ct-run">
+      <h2 class="ct-title m-text-3" id="contact-title">Book your first test</h2>
+      <div class="ct-line" aria-hidden="true"></div>
+    </div>
+    <div class="ct-grid">
+      <dl class="ct-info">
+        <div><dt class="m-text-4">Club and lab</dt><dd class="m-text-6">Harbour Street 1, 1000 Copenhagen</dd></div>
+        <div><dt class="m-text-4">Hours</dt><dd class="m-text">Mon–Fri 06:00–21:00<br>Sat–Sun 07:00–15:00</dd></div>
+        <div><dt class="m-text-4">Phone</dt><dd><a data-8b-placeholder="phone" class="m-link" href="tel:+4500000000">+45 00 00 00 00</a></dd></div>
+        <div><dt class="m-text-4">Email</dt><dd><a data-8b-placeholder="email" class="m-link" href="mailto:lab@arcline.example">lab@arcline.example</a></dd></div>
+      </dl>
+      <form data-8b-placeholder="form" class="ct-form" action="#" method="post" novalidate data-8b-motion="rise">
+        <label class="m-field"><span class="m-field__label">Name</span><input name="name" type="text" autocomplete="name" required></label>
+        <label class="m-field"><span class="m-field__label">Email</span><input name="email" type="email" autocomplete="email" required></label>
+        <label class="m-field ct-wide"><span class="m-field__label">Main sport</span><select name="sport"><option>Running</option><option>Cycling</option><option>Swimming</option><option>Court sports</option><option>Strength</option><option>More than one</option></select></label>
+        <label class="m-field ct-wide"><span class="m-field__label">Your goal (optional)</span><textarea name="goal" rows="3"></textarea></label>
+        <div class="ct-send">
+          <button class="m-btn" type="submit"><span class="m-btn__label">Request a slot</span></button>
+          <p class="ct-status m-text-4" role="status" data-ok="Thank you. A coach will call within one working day to book your test." data-error="Please add your name and a valid email address."></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<!-- footer: width-filling wordmark, a line about the club, links, socials, copyright and the Design: 8B credit -->
+<footer id="footer" data-8b-section="footer">
+  <div class="ft-slide m-slide-2">
+    <p class="ft-word m-text-2" style="--len:8" data-8b-motion="streak" data-from="left">arcline<sup>®</sup></p>
+    <div class="ft-cols">
+      <p class="m-text">Measured training for run, ride, swim, court and strength. Club and lab on the harbour in Copenhagen.</p>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a class="m-link" href="#method">Method</a></li>
+          <li><a class="m-link" href="#lab">Lab</a></li>
+          <li><a class="m-link" href="#week">Week</a></li>
+          <li><a class="m-link" href="#membership">Membership</a></li>
+        </ul>
+      </nav>
+      <ul>
+        <li><a data-8b-placeholder="social" class="m-link" href="https://www.instagram.com/">Instagram</a></li>
+        <li><a data-8b-placeholder="social" class="m-link" href="https://www.strava.com/">Strava club</a></li>
+        <li><a data-8b-placeholder="social" class="m-link" href="https://www.youtube.com/">YouTube</a></li>
+      </ul>
+      <p class="ft-legal m-text-4">© 2026 Arcline Performance Club · Design: <a href="https://8b.com/" style="color:inherit" data-8b-credit>8B</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
+<script data-8b-part="section-script:navigation">
+(() => {
+  const root = document.getElementById('navigation');
+  const bar = root.querySelector('.nav__bar');
+  const toggle = root.querySelector('.nav__menu');
+  const menu = root.querySelector('.menu');
+  const close = root.querySelector('.menu__close');
+  let lastY = scrollY, turnY = scrollY, hidden = false;
+  addEventListener('scroll', () => {
+    const y = scrollY;
+    if (y > lastY) { if (hidden) turnY = y; else if (y > 160 && y - turnY > 24) { hidden = true; bar.setAttribute('data-hidden', ''); turnY = y; } }
+    else if (y < lastY) { if (!hidden) turnY = y; else if (turnY - y > 24 || y < 80) { hidden = false; bar.removeAttribute('data-hidden'); turnY = y; } }
+    lastY = y;
+  }, { passive: true });
+  bar.addEventListener('focusin', () => { hidden = false; bar.removeAttribute('data-hidden'); });
+  const open = state => {
+    menu.hidden = !state; toggle.setAttribute('aria-expanded', String(state));
+    if (state) { window.lenis?.stop(); close.focus(); } else { window.lenis?.start(); toggle.focus(); }
+  };
+  toggle.addEventListener('click', () => open(true));
+  close.addEventListener('click', () => open(false));
+  menu.addEventListener('click', event => { if (event.target.closest('a')) { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); window.lenis?.start(); } });
+  addEventListener('keydown', event => { if (event.key === 'Escape' && !menu.hidden) open(false); });
+})();
+</script>
+<script data-8b-part="section-script:opening">
+(() => {
+  const stage = document.querySelector('#opening .op-s1');
+  new IntersectionObserver(([entry]) => entry.isIntersecting ? stage.removeAttribute('data-paused') : stage.setAttribute('data-paused', '')).observe(stage);
+})();
+</script>
+<script data-8b-part="motion-queue">
+(() => {
+  'use strict';
+  const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
+  const parsed = document.readyState === 'loading' ? new Promise(resolve => document.addEventListener('DOMContentLoaded', resolve, { once: true })) : Promise.resolve();
+  const ready = () => Promise.all([fonts, parsed]).then(() => firsts);
+  const nextTask = () => window.scheduler?.yield?.() ?? new Promise(resolve => setTimeout(resolve));
+  const refresh = () => {
+    if (typeof window.refreshScroll === 'function') return window.refreshScroll();
+    window.ScrollTrigger?.sort(); window.ScrollTrigger?.refresh();
+  };
+  const run = (setup, name) => {
+    for (const trigger of window.ScrollTrigger?.getAll() || []) if (!trigger.end && window.ScrollTrigger.getAll().includes(trigger)) trigger.refresh(0, 1);
+    const context = window.gsap.context(() => {});
+    const log = new MutationObserver(() => {});
+    log.observe(document.documentElement, { attributes: true, attributeOldValue: true, subtree: true });
+    let failure = null, records;
+    try { context.add(() => { try { setup(); } catch (error) { failure = error; } }); }
+    finally { records = log.takeRecords(); log.disconnect(); }
+    if (!failure) return true;
+    try { context.revert(); } catch (error) { console.error(name, 'revert failed', error); }
+    for (const { target, attributeName, oldValue } of records.reverse()) {
+      const now = target.getAttribute(attributeName);
+      if (oldValue == null) { if (now != null) target.removeAttribute(attributeName); }
+      else if (now !== oldValue) target.setAttribute(attributeName, oldValue);
+    }
+    console.error(name, failure);
+    return false;
+  };
+  let firsts = Promise.resolve(), tail = null, pending = 0, lazy = null, building = 0, firstCount = 0;
+  window.motionReady = ready();
+  parsed.then(() => { if (firstCount && !tail) firsts.then(refresh); });
+  window.queueMotion = (setup, { first = false, near, id } = {}) => {
+    if (!window.gsap || typeof setup !== 'function') return;
+    const name = id || document.currentScript?.getAttribute('data-8b-part') || 'motion';
+    if (near instanceof Element && window.IntersectionObserver) {
+      const watch = new IntersectionObserver(entries => {
+        if (!entries.some(entry => entry.isIntersecting)) return;
+        watch.disconnect();
+        building++;
+        lazy = (lazy || ready()).then(nextTask).then(() => run(setup, name)).finally(() => { if (!--building) refresh(); });
+      }, { rootMargin: '100% 0px' });
+      watch.observe(near);
+      return;
+    }
+    if (first) { firstCount++; firsts = firsts.then(() => fonts).then(() => { if (!run(setup, name)) refresh(); }); }
+    else {
+      pending++;
+      tail = (tail || ready()).then(nextTask).then(() => run(setup, name))
+        .finally(() => { if (!--pending) refresh(); });
+    }
+    window.motionReady = Promise.all([firsts, tail]);
+  };
+})();
+</script>
+<script data-8b-part="page-init">
+gsap.registerPlugin(ScrollTrigger);
+function refreshScroll() { ScrollTrigger.sort(); ScrollTrigger.refresh(); }
+gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+  const bar = document.querySelector('#navigation .nav__bar');
+  const offset = bar ? bar.getBoundingClientRect().bottom + 12 : 0;
+  const lenis = window.lenis = new Lenis({ lerp: 0.09, anchors: { offset: -offset } });
+  const tick = time => lenis.raf(time * 1000);
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(tick); gsap.ticker.lagSmoothing(0);
+  return () => { gsap.ticker.remove(tick); gsap.ticker.lagSmoothing(500, 33); lenis.destroy(); window.lenis = null; };
+});
+</script>
+<script data-8b-part="motion">
+const blurOK = () => matchMedia('(min-width: 1024px) and (hover: hover)').matches;
+const effects = {
+  streak(element, vars = {}) {
+    const dir = vars.dir || (element.dataset.from === 'left' ? -1 : 1);
+    return gsap.timeline(vars.timeline)
+      .fromTo(element, { x: () => dir * Math.min(innerWidth * .22, 320), skewX: -20 * dir, scaleX: 1.15, transformOrigin: dir > 0 ? '100% 50%' : '0% 50%' },
+        { x: 0, skewX: 0, scaleX: 1, duration: 1, ease: vars.ease || 'expo.out', immediateRender: true }, 0)
+      .fromTo(element, { opacity: 0 }, { opacity: 1, duration: .35, ease: 'none', immediateRender: true }, 0);
+  },
+  focus(element, vars = {}) {
+    const blur = blurOK();
+    return gsap.timeline(vars.timeline)
+      .fromTo(element, { scale: 1.14, filter: blur ? 'blur(14px)' : 'none' },
+        { scale: 1, filter: blur ? 'blur(0px)' : 'none', duration: 1.2, ease: 'power3.out', immediateRender: true, clearProps: blur ? 'filter' : '' });
+  },
+  rise(element, vars = {}) {
+    return gsap.timeline(vars.timeline)
+      .fromTo(element.children, { y: 32, opacity: 0 }, { y: 0, opacity: 1, duration: .8, stagger: .09, ease: 'power3.out', immediateRender: true });
+  },
+  orbit(element, vars = {}) {
+    const circles = element.querySelectorAll('circle, ellipse');
+    return gsap.timeline(vars.timeline)
+      .fromTo(element, { rotation: -24 }, { rotation: 24, duration: 1, ease: 'none', immediateRender: true }, 0)
+      .fromTo(circles, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: .45, stagger: .05, ease: 'power2.out', immediateRender: true }, 0);
+  }
+};
+const bindings = {
+  streak: element => ({ trigger: element, start: 'top 88%', once: true }),
+  focus: element => ({ trigger: element, start: 'top 85%', once: true }),
+  rise: element => ({ trigger: element, start: 'top 86%', once: true }),
+  orbit: element => ({ trigger: element, start: 'top bottom', end: 'bottom top', scrub: true })
+};
+document.querySelectorAll('[data-8b-section]').forEach(section => {
+  Object.keys(bindings).forEach(name => {
+    const elements = section.querySelectorAll(`[data-8b-motion~="${name}"]`);
+    if (!elements.length) return;
+    const id = `effect:${name}:${section.id}`;
+    queueMotion(() => gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+      elements.forEach((element, index) => ScrollTrigger.create({ id: `${id}:${index}`, ...bindings[name](element), animation: effects[name](element) }));
+    }), { first: section.getBoundingClientRect().top < innerHeight, id });
+  });
+});
+</script>
+<script data-8b-part="scene:opening">
+queueMotion(() => {
+  gsap.matchMedia().add({ motion: '(prefers-reduced-motion: no-preference)', blur: '(min-width: 1024px) and (hover: hover)' }, context => {
+    if (!context.conditions.motion) return;
+    const section = document.getElementById('opening');
+    const q = selector => section.querySelector(selector);
+    const vw = f => () => innerWidth * f;
+    const timeline = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
+      id: 'opening', trigger: section, start: 'top top', end: () => '+=' + q('.op-s1').offsetHeight, scrub: true, invalidateOnRefresh: true
+    }});
+    timeline
+      .to(q('.op-line--1'), { x: vw(-.6), skewX: 24, scaleX: 1.25, transformOrigin: '100% 50%', duration: .7, ease: 'power1.in' }, 0)
+      .to(q('.op-line--2'), { x: vw(.55), skewX: -24, scaleX: 1.25, transformOrigin: '0% 50%', duration: .66, ease: 'power1.in' }, .03)
+      .to(q('.op-line--3'), { x: vw(-.75), skewX: 24, scaleX: 1.25, transformOrigin: '100% 50%', duration: .62, ease: 'power1.in' }, .06)
+      .to(section.querySelectorAll('.op-line'), { opacity: 0, duration: .2, ease: 'none' }, .5)
+      .to(q('.op-meta'), { y: -40, opacity: 0, duration: .35 }, 0)
+      .to(q('.op-photo'), { scale: 1.3, xPercent: -6, filter: context.conditions.blur ? 'blur(10px)' : 'none', duration: 1 }, 0)
+      .to(q('.op-ring'), { opacity: 0, duration: .5 }, 0)
+      .to(q('.op-slide'), { scale: .8, yPercent: -4, xPercent: 6, duration: 1, ease: 'power1.in' }, 0)
+      .to(q('.op-dim'), { opacity: .78, duration: 1 }, 0)
+      .to(q('.op-ground'), { opacity: 0, duration: 1 }, 0)
+      .fromTo(q('.op-card'), { x: vw(.08), rotation: 2.5 }, { x: 0, rotation: 0, duration: 1, ease: 'power2.out' }, 0)
+      .fromTo(q('.op-title2'), { x: vw(.35), skewX: -24, scaleX: 1.3, transformOrigin: '0% 50%' }, { x: 0, skewX: 0, scaleX: 1, duration: .8, ease: 'expo.out' }, .2)
+      .fromTo(q('.op-orb'), { x: vw(.6), rotation: 300, scale: .4 }, { x: 0, rotation: 0, scale: 1, duration: 1, ease: 'power3.out' }, 0);
+  });
+}, { first: true, id: 'opening' });
+</script>
+<script data-8b-part="section-script:contact">
+(() => {
+  const form = document.querySelector('#contact .ct-form');
+  const status = form.querySelector('.ct-status');
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    const ok = form.checkValidity();
+    status.textContent = ok ? status.dataset.ok : status.dataset.error;
+    if (ok) form.reset();
+  });
+})();
+</script>
+<script data-8b-part="scene:method">
+queueMotion(() => {
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const section = document.getElementById('method');
+    const timeline = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
+      id: 'method', trigger: section.querySelector('.mt-title'), start: 'top 92%', end: 'top 32%', scrub: true, invalidateOnRefresh: true
+    }});
+    section.querySelectorAll('.mt-gap').forEach((gap, index) => {
+      const chip = gap.querySelector('.mt-chip');
+      const after = gap.parentElement.querySelector('.mt-after');
+      const at = index * .16;
+      if (after) timeline.fromTo(after, { x: () => -gap.offsetWidth }, { x: 0, duration: .45, ease: 'power2.out' }, at);
+      timeline.fromTo(chip, { x: () => -gap.offsetWidth * 1.5, y: () => -innerHeight * .28, rotation: -300, scale: .45 },
+        { x: 0, y: 0, rotation: 0, scale: 1, duration: .7, ease: 'power2.inOut' }, at + .04);
+    });
+  });
+});
+</script>
+<script data-8b-part="scene:disciplines">
+queueMotion(() => {
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const section = document.getElementById('disciplines');
+    const grid = section.querySelector('.ds-grid');
+    const tiles = [...grid.querySelectorAll('.ds-tile')];
+    const tilt = [-8, 5, -3, 9, -6, 3, -10, 6];
+    const toCentre = (tile, axis) => axis === 'x'
+      ? grid.clientWidth / 2 - (tile.offsetLeft + tile.offsetWidth / 2)
+      : Math.min(grid.clientHeight, innerHeight * .9) / 2 - (tile.offsetTop + tile.offsetHeight / 2);
+    const timeline = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
+      id: 'disciplines', trigger: grid, start: 'top 88%', end: () => grid.offsetHeight > innerHeight ? 'top 2%' : grid.offsetHeight > innerHeight * .8 ? 'top 38%' : 'center 52%', scrub: true, invalidateOnRefresh: true
+    }});
+    gsap.set(tiles, { zIndex: index => tiles.length - index });
+    tiles.forEach((tile, index) => {
+      timeline.fromTo(tile, {
+        x: () => toCentre(tile, 'x'), y: () => toCentre(tile, 'y'), rotation: tilt[index % tilt.length],
+        scale: () => Math.min(1, 210 / tile.offsetWidth, 240 / tile.offsetHeight)
+      }, { x: 0, y: 0, rotation: 0, scale: 1, duration: .5, ease: 'power2.inOut' }, index * .07);
+    });
+  });
+});
+</script>
+<script data-8b-part="scene:lab">
+queueMotion(() => {
+  gsap.matchMedia().add({ motion: '(prefers-reduced-motion: no-preference)', wide: '(min-width: 861px)' }, context => {
+    if (!context.conditions.motion) return;
+    const section = document.getElementById('lab');
+    const stage = section.querySelector('.lb-stage');
+    const notes = [...section.querySelectorAll('.lb-note')];
+    const timeline = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
+      id: 'lab', trigger: stage, start: 'top 88%', end: 'center 55%', scrub: true, invalidateOnRefresh: true
+    }});
+    timeline
+      .fromTo(section.querySelector('.lb-lens'), { clipPath: 'circle(7% at 50% 50%)' }, { clipPath: 'circle(50% at 50% 50%)', duration: 1, ease: 'power2.inOut' }, 0)
+      .fromTo(section.querySelector('.lb-lens img'), { scale: 1.5 }, { scale: 1, duration: 1, ease: 'power2.out' }, 0)
+      .fromTo(section.querySelector('.lb-ring'), { rotation: -140, transformOrigin: '50% 50%' }, { rotation: 0, duration: 1, ease: 'power2.out' }, 0)
+      .fromTo(section.querySelector('.lb-ring circle'), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: .6 }, 0);
+    if (context.conditions.wide) {
+      notes.forEach((note, index) => {
+        const angle = parseFloat(note.style.getPropertyValue('--a')) || 0;
+        timeline.fromTo(note, { '--a': '-90deg', opacity: 0 }, { '--a': `${angle}deg`, opacity: 1, duration: .7, ease: 'power2.out' }, .2 + index * .06);
+      });
+    } else {
+      timeline.fromTo(notes, { x: 48, opacity: 0 }, { x: 0, opacity: 1, duration: .45, stagger: .08, ease: 'power2.out' }, .45);
+    }
+  });
+});
+</script>
+<script data-8b-part="scene:week">
+queueMotion(() => {
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const section = document.getElementById('week');
+    const stage = section.querySelector('.wk-stage');
+    const view = section.querySelector('.wk-view');
+    const track = section.querySelector('.wk-track');
+    section.setAttribute('data-scrubbed', '');
+    const distance = () => {
+      const pad = parseFloat(getComputedStyle(view).paddingLeft) || 0;
+      return Math.max(0, track.offsetWidth - (view.clientWidth - pad * 2));
+    };
+    const measure = () => section.style.setProperty('--wk-height', `${stage.offsetHeight + distance()}px`);
+    measure();
+    ScrollTrigger.addEventListener('refreshInit', measure);
+    const skewTo = gsap.quickTo(track, 'skewX', { duration: .45, ease: 'power3.out' });
+    const settle = gsap.delayedCall(.14, () => skewTo(0)).pause();
+    gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
+      id: 'week', trigger: section, start: 'top top', end: 'bottom bottom', scrub: true, invalidateOnRefresh: true,
+      onUpdate: self => { skewTo(gsap.utils.clamp(-9, 9, self.getVelocity() / -260)); settle.restart(true); }
+    }})
+      .to(track, { x: () => -distance(), duration: 1 }, 0)
+      .fromTo(section.querySelector('.wk-progress span'), { scaleX: 0 }, { scaleX: 1, duration: 1 }, 0);
+    return () => {
+      ScrollTrigger.removeEventListener('refreshInit', measure);
+      section.style.removeProperty('--wk-height');
+      section.removeAttribute('data-scrubbed');
+    };
+  });
+});
+</script>
+<script data-8b-part="scene:recovery">
+queueMotion(() => {
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const section = document.getElementById('recovery');
+    gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
+      id: 'recovery', trigger: section.querySelector('.rc-window'), start: 'top 92%', end: 'center 50%', scrub: true
+    }})
+      .fromTo(section.querySelector('.rc-sun'), { yPercent: -110, scale: .8 }, { yPercent: 0, scale: 1, duration: 1, ease: 'power1.inOut' }, 0)
+      .fromTo(section.querySelector('.rc-cool'), { opacity: 0 }, { opacity: 1, duration: 1 }, 0)
+      .fromTo(section.querySelector('.rc-sea img'), { yPercent: -5, scale: 1.12 }, { yPercent: 0, scale: 1, duration: 1 }, 0);
+  });
+});
+</script>
+<script data-8b-part="scene:faq">
+queueMotion(() => {
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const section = document.getElementById('faq');
+    const rail = section.querySelector('.fq-rail');
+    const ball = section.querySelector('.fq-ball');
+    const travel = () => Math.max(0, rail.clientHeight - ball.offsetHeight);
+    gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
+      id: 'faq', trigger: section.querySelector('.fq-list'), start: 'top 72%', end: 'bottom 72%', scrub: .5, invalidateOnRefresh: true
+    }})
+      .fromTo(ball, { y: 0, rotation: 0 }, { y: travel, rotation: () => travel() / (Math.PI * ball.offsetWidth) * 360, duration: 1 });
+    const items = section.querySelectorAll('.fq-item');
+    const onToggle = () => refreshScroll();
+    items.forEach(item => item.addEventListener('toggle', onToggle));
+    return () => items.forEach(item => item.removeEventListener('toggle', onToggle));
+  });
+});
+</script>
+<script data-8b-part="scene:contact">
+queueMotion(() => {
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const section = document.getElementById('contact');
+    const run = section.querySelector('.ct-run');
+    const title = section.querySelector('.ct-title');
+    gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
+      id: 'contact', trigger: run, start: 'top 92%', end: 'top 38%', scrub: true, invalidateOnRefresh: true
+    }})
+      .fromTo(section.querySelector('.ct-line'), { scaleX: () => title.offsetWidth / run.clientWidth }, { scaleX: 1, duration: 1, ease: 'power2.inOut' }, 0)
+      .fromTo(title, { x: () => -(run.clientWidth - title.offsetWidth), skewX: -16 }, { x: 0, skewX: 0, duration: 1, ease: 'power2.inOut' }, 0);
+  });
+});
+</script>
+</body>
+</html>
