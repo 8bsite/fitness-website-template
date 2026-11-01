@@ -4,6 +4,7 @@
   Source: https://github.com/8bsite/fitness-website-template
   MIT License (code) https://8b.com/ · Photos: Unsplash License, see CREDITS.md · Fonts: Google Fonts (OFL)
   One HTML file, no build step. Notes for people and AI agents: README.md and AGENTS.md.
+  Scroll motion: CSS scroll-driven animations and an inline script, no libraries. A GSAP build of this page: index.gsap.html.
 -->
 <html lang="en">
 <head>
@@ -19,6 +20,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2064%2064'%3E%3Crect%20width%3D'64'%20height%3D'64'%20rx%3D'14'%20fill%3D'%231a2333'%2F%3E%3Ctext%20x%3D'32'%20y%3D'45'%20font-family%3D'Arial%2CHelvetica%2Csans-serif'%20font-size%3D'38'%20font-weight%3D'700'%20text-anchor%3D'middle'%20fill%3D'%23edf2f6'%3EA%3C%2Ftext%3E%3C%2Fsvg%3E" data-8b-placeholder="favicon">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwcGFU.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* cyrillic-ext */
 @font-face {
@@ -26,7 +28,7 @@
   font-style: normal;
   font-weight: 400 600;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/l/font?kit=gyBUhwUxId8gMGYQMKR3pzfaWI_RnONalrErE8iusq2KkpeJNBW4zg&skey=70a816dcd17c8a3c&v=v5) format('woff2');
+  src: url(https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwRGFWfOw.woff2) format('woff2');
   unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
 /* cyrillic */
@@ -35,7 +37,7 @@
   font-style: normal;
   font-weight: 400 600;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/l/font?kit=gyBUhwUxId8gMGYQMKR3pzfaWI_RnONalrErE8iusq2KkpeJNBy4zg&skey=70a816dcd17c8a3c&v=v5) format('woff2');
+  src: url(https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwYGFWfOw.woff2) format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* vietnamese */
@@ -44,7 +46,7 @@
   font-style: normal;
   font-weight: 400 600;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/l/font?kit=gyBUhwUxId8gMGYQMKR3pzfaWI_RnONalrErE8iusq2KkpeJNBe4zg&skey=70a816dcd17c8a3c&v=v5) format('woff2');
+  src: url(https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwTGFWfOw.woff2) format('woff2');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
 }
 /* latin-ext */
@@ -53,8 +55,8 @@
   font-style: normal;
   font-weight: 400 600;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/l/font?kit=gyBUhwUxId8gMGYQMKR3pzfaWI_RnONalrErE8iusq2KkpeJNBa4zg&skey=70a816dcd17c8a3c&v=v5) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwSGFWfOw.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
@@ -62,7 +64,7 @@
   font-style: normal;
   font-weight: 400 600;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/l/font?kit=gyBUhwUxId8gMGYQMKR3pzfaWI_RnONalrErE8iusq2KkpeJNBi4zg&skey=70a816dcd17c8a3c&v=v5) format('woff2');
+  src: url(https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwcGFU.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
@@ -96,11 +98,6 @@
 @font-face { font-family: "Geist Fallback"; src: local("Arial"), local("ArialMT"), local("Helvetica"); font-weight: 100 549; size-adjust: 104.8%; ascent-override: 96.4%; descent-override: 28.6%; line-gap-override: 0%; }
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; background: var(--color-4); }
-html.lenis, html.lenis body { height: auto; }
-.lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
-.lenis [data-lenis-prevent], .lenis [data-lenis-prevent-wheel], .lenis [data-lenis-prevent-touch] { overscroll-behavior: contain; }
-.lenis.lenis-smooth iframe { pointer-events: none; }
-.lenis.lenis-autoToggle { transition-property: overflow; transition-duration: 1ms; transition-behavior: allow-discrete; }
 body {
   margin: 0; min-height: 100vh; overflow-x: clip;
   font-family: var(--font-1); font-size: 16px; line-height: 1.55; font-weight: 400;
@@ -588,6 +585,180 @@ main { overflow-x: clip; }
 @media (max-width: 860px) { #footer .ft-cols { grid-template-columns: 1fr 1fr; } #footer .ft-cols > .m-text { grid-column: 1 / -1; } }
 }
 </style>
+<style data-8b-part="motion">
+@layer scenes {
+[data-8b-live] [data-8b-motion~="rise"][data-8b-items=":scope > li"] > li { animation-name: motion-rise-scope-li-li-translate, motion-rise-scope-li-li-opacity; animation-duration: 0.8s; animation-delay: calc(0s + 0.09s * var(--i)); animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1); animation-fill-mode: both; animation-play-state: paused; transform: none; }
+[data-8b-live] [data-8b-motion~="rise"][data-8b-items=":scope > li"].is-in > li { animation-play-state: running; }
+[data-8b-live] [data-8b-motion~="rise"][data-8b-items=":scope > .mb-plan"] > .mb-plan { animation-name: motion-rise-scope-li-li-translate, motion-rise-scope-li-li-opacity; animation-duration: 0.8s; animation-delay: calc(0s + 0.09s * var(--i)); animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1); animation-fill-mode: both; animation-play-state: paused; transform: none; }
+[data-8b-live] [data-8b-motion~="rise"][data-8b-items=":scope > .mb-plan"].is-in > .mb-plan { animation-play-state: running; }
+[data-8b-live] [data-8b-motion~="rise"][data-8b-items=":scope > *"] > * { animation-name: motion-rise-scope-li-li-translate, motion-rise-scope-li-li-opacity; animation-duration: 0.8s; animation-delay: calc(0s + 0.09s * var(--i)); animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1); animation-fill-mode: both; animation-play-state: paused; transform: none; }
+[data-8b-live] [data-8b-motion~="rise"][data-8b-items=":scope > *"].is-in > * { animation-play-state: running; }
+[data-8b-live] #coaches .co-slide, [data-8b-live] #membership .mb-slide { overflow-x: clip; overflow-y: clip; }
+[data-8b-live] [data-8b-motion~="orbit"] { view-timeline: --motion-orbit block; view-timeline-inset: 0; animation-name: motion-orbit-rotate; animation-timeline: --motion-orbit; animation-range: cover 0% cover 100%; animation-timing-function: linear; animation-fill-mode: both; transform: none; }
+[data-8b-live] [data-8b-motion~="orbit"] > circle { animation-name: motion-orbit-circle-strokedashoffset; animation-timeline: --motion-orbit; animation-range: cover calc(5% * var(--i)) cover calc(45% + 5% * var(--i)); animation-timing-function: cubic-bezier(0.3333, 1, 0.6667, 1); animation-fill-mode: both; }
+@keyframes motion-rise-scope-li-li-translate { 0% { translate: 0px 32px; } 100% { translate: 0px 0px; } }
+@keyframes motion-rise-scope-li-li-opacity { 0% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes motion-orbit-rotate { 0% { rotate: -24deg; } 100% { rotate: 24deg; } }
+@keyframes motion-orbit-circle-strokedashoffset { 0% { stroke-dashoffset: 1px; } 100% { stroke-dashoffset: 0px; } }
+[data-8b-live] [data-8b-motion~="streak"] { --motion-streak-dir: 1; transform-origin: 100% 50%; animation-name: motion-streak, motion-streak-fade; animation-duration: 1s, 0.35s; animation-timing-function: linear(0, 0.15865, 0.29149, 0.40301, 0.49686, 0.57601, 0.64291, 0.69955, 0.74757, 0.78832, 0.82292, 0.85229, 0.87721, 0.89831, 0.91615, 0.93119, 0.94384, 0.95442, 0.96324, 0.97054, 0.97656, 0.98149, 0.98549, 0.98871, 0.99129, 0.99333, 0.99494, 0.99619, 0.99715, 0.99788, 0.99844, 0.99885, 0.99917, 0.9994, 0.99958, 0.99971, 0.9998, 0.99988, 0.99993, 0.99997, 1), linear; animation-fill-mode: both; animation-play-state: paused; }
+[data-8b-live] [data-8b-motion~="streak"][data-from="left"] { --motion-streak-dir: -1; transform-origin: 0% 50%; }
+[data-8b-live] [data-8b-motion~="streak"].is-in { animation-play-state: running; }
+[data-8b-live] [data-8b-motion~="focus"] { animation-name: motion-focus; animation-duration: 1.2s; animation-timing-function: linear(0, 0.09631, 0.18549, 0.26791, 0.3439, 0.41382, 0.47799, 0.53675, 0.5904, 0.63925, 0.68359, 0.72372, 0.7599, 0.79241, 0.82149, 0.84741, 0.8704, 0.89069, 0.90849, 0.92403, 0.9375, 0.94909, 0.95899, 0.96737, 0.9744, 0.98022, 0.98499, 0.98884, 0.9919, 0.99428, 0.99609, 0.99744, 0.9984, 0.99906, 0.99949, 0.99976, 0.9999, 0.99997, 0.99999, 1, 1); animation-fill-mode: both; animation-play-state: paused; }
+[data-8b-live] [data-8b-motion~="focus"].is-in { animation-play-state: running; }
+@media (min-width: 1024px) and (hover: hover) {
+  [data-8b-live] [data-8b-motion~="focus"] { animation-name: motion-focus, motion-focus-blur; animation-fill-mode: both, backwards; }
+}
+@keyframes motion-streak { 0% { transform: translateX(calc(var(--motion-streak-dir) * min(22vw, 320px))) skewX(calc(var(--motion-streak-dir) * -20deg)) scaleX(1.15); } 100% { transform: translateX(0px) skewX(0deg) scaleX(1); } }
+@keyframes motion-streak-fade { 0% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes motion-focus { 0% { scale: 1.14; } 100% { scale: 1; } }
+@keyframes motion-focus-blur { 0% { filter: blur(14px); } 100% { filter: blur(0px); } }
+}
+</style>
+<style data-8b-part="scene:opening">
+@layer scenes {
+[data-8b-live] #opening { view-timeline: --opening block; }
+[data-8b-live] #opening :is(.op-line, .op-meta, .op-photo, .op-slide, .op-dim, .op-ground, .op-card, .op-title2, .op-orb) { animation-timeline: --opening; animation-fill-mode: both; animation-timing-function: linear; }
+[data-8b-live] #opening .op-line { animation-name: opening-line, opening-line-fade; animation-timing-function: cubic-bezier(0.3333, 0, 0.6667, 0.3333), linear; --opening-x: -60vw; --opening-skew: 24deg; transform-origin: 100% 50%; }
+[data-8b-live] #opening .op-line--1 { animation-range: contain 0svh contain 70svh, contain 50svh contain 70svh; }
+[data-8b-live] #opening .op-line--2 { animation-range: contain 3svh contain 69svh, contain 50svh contain 70svh; --opening-x: 55vw; --opening-skew: -24deg; transform-origin: 0% 50%; }
+[data-8b-live] #opening .op-line--3 { animation-range: contain 6svh contain 68svh, contain 50svh contain 70svh; --opening-x: -75vw; }
+[data-8b-live] #opening .op-meta { animation-name: opening-meta; animation-range: contain 0svh contain 35svh; }
+[data-8b-live] #opening .op-photo { animation-name: opening-photo; animation-range: contain 0svh contain 100svh; }
+[data-8b-live] #opening .op-ring { animation-name: op-orbit, opening-ring; animation-duration: 26s, auto; animation-timing-function: linear; animation-iteration-count: infinite, 1; animation-timeline: auto, --opening; animation-range: normal, contain 0svh contain 50svh; animation-fill-mode: none, both; animation-play-state: running; }
+[data-8b-live] #opening .op-s1[data-paused] .op-ring { animation-play-state: paused, running; }
+[data-8b-live] #opening .op-slide { animation-name: opening-slide; animation-range: contain 0svh contain 100svh; animation-timing-function: cubic-bezier(0.3333, 0, 0.6667, 0.3333); }
+[data-8b-live] #opening .op-dim { animation-name: opening-dim; animation-range: contain 0svh contain 100svh; }
+[data-8b-live] #opening .op-ground { animation-name: opening-ground; animation-range: contain 0svh contain 100svh; }
+[data-8b-live] #opening .op-card { animation-name: opening-card; animation-range: contain 0svh contain 100svh; animation-timing-function: cubic-bezier(0.3333, 1, 0.6667, 1); }
+[data-8b-live] #opening .op-title2 { animation-name: opening-title2; animation-range: contain 20svh contain 100svh; animation-timing-function: linear(0, 0.15865, 0.29149, 0.40301, 0.49686, 0.57601, 0.64291, 0.69955, 0.74757, 0.78832, 0.82292, 0.85229, 0.87721, 0.89831, 0.91615, 0.93119, 0.94384, 0.95442, 0.96324, 0.97054, 0.97656, 0.98149, 0.98549, 0.98871, 0.99129, 0.99333, 0.99494, 0.99619, 0.99715, 0.99788, 0.99844, 0.99885, 0.99917, 0.9994, 0.99958, 0.99971, 0.9998, 0.99988, 0.99993, 0.99997, 1); transform-origin: 0% 50%; }
+[data-8b-live] #opening .op-orb { animation-name: opening-orb; animation-range: contain 0svh contain 100svh; animation-timing-function: linear(0, 0.09631, 0.18549, 0.26791, 0.3439, 0.41382, 0.47799, 0.53675, 0.5904, 0.63925, 0.68359, 0.72372, 0.7599, 0.79241, 0.82149, 0.84741, 0.8704, 0.89069, 0.90849, 0.92403, 0.9375, 0.94909, 0.95899, 0.96737, 0.9744, 0.98022, 0.98499, 0.98884, 0.9919, 0.99428, 0.99609, 0.99744, 0.9984, 0.99906, 0.99949, 0.99976, 0.9999, 0.99997, 0.99999, 1, 1); }
+@media (min-width: 1024px) and (hover: hover) {
+  [data-8b-live] #opening .op-photo { animation-name: opening-photo, opening-photo-blur; }
+}
+@keyframes opening-line { 0% { transform: translateX(0px) skewX(0deg) scaleX(1); } 100% { transform: translateX(var(--opening-x)) skewX(var(--opening-skew)) scaleX(1.25); } }
+@keyframes opening-line-fade { 0% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes opening-meta { 0% { translate: 0px 0px; opacity: 1; } 100% { translate: 0px -40px; opacity: 0; } }
+@keyframes opening-photo { 0% { translate: 0% 0%; scale: 1; } 100% { translate: -6% 0%; scale: 1.3; } }
+@keyframes opening-photo-blur { 0% { filter: blur(0px); } 100% { filter: blur(10px); } }
+@keyframes opening-ring { 0% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes opening-slide { 0% { translate: 0% 0%; scale: 1; } 100% { translate: 6% -4%; scale: 0.8; } }
+@keyframes opening-dim { 0% { opacity: 0; } 100% { opacity: 0.78; } }
+@keyframes opening-ground { 0% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes opening-card { 0% { translate: 8vw 0px; rotate: 2.5deg; } 100% { translate: 0px 0px; rotate: 0deg; } }
+@keyframes opening-title2 { 0% { transform: translateX(35vw) skewX(-24deg) scaleX(1.3); } 100% { transform: translateX(0px) skewX(0deg) scaleX(1); } }
+@keyframes opening-orb { 0% { translate: 60vw 0px; rotate: 300deg; scale: 0.4; } 100% { translate: 0px 0px; rotate: 0deg; scale: 1; } }
+}
+</style>
+<style data-8b-part="scene:method">
+@layer scenes {
+[data-8b-live] { --ease-power2-inout: linear(0, 0.0001, 0.0005, 0.0017, 0.004, 0.0078, 0.0135, 0.0214, 0.032, 0.0456, 0.0625, 0.0832, 0.108, 0.1373, 0.1715, 0.2109, 0.256, 0.3071, 0.3645, 0.4287, 0.5, 0.5713, 0.6355, 0.6929, 0.744, 0.7891, 0.8285, 0.8627, 0.892, 0.9168, 0.9375, 0.9544, 0.968, 0.9786, 0.9865, 0.9922, 0.996, 0.9983, 0.9995, 0.9999, 1); }
+[data-8b-live] #method-title { view-timeline: --method-t1 block; view-timeline-inset: 0; }
+[data-8b-live] #method-title > span:nth-of-type(-n+2) > .mt-after, [data-8b-live] #method-title > span:nth-of-type(-n+3) > .mt-gap > .mt-chip { animation-timeline: --method-t1; animation-fill-mode: both; transform: none; }
+[data-8b-live] #method-title > span:nth-of-type(1) > .mt-after { animation-name: method-span-mt-after-translate; animation-range: cover 8vh cover 33.4717vh; animation-timing-function: cubic-bezier(0.3333, 1, 0.6667, 1); }
+[data-8b-live] #method-title > span:nth-of-type(1) > .mt-gap > .mt-chip { animation-name: method-img-mt-chip-translate, method-img-mt-chip-rotate, method-img-mt-chip-scale; animation-range: cover 10.2642vh cover 49.8868vh; animation-timing-function: var(--ease-power2-inout); }
+[data-8b-live] #method-title > span:nth-of-type(2) > .mt-after { animation-name: method-span-mt-after-translate-2; animation-range: cover 17.0566vh cover 42.5283vh; animation-timing-function: cubic-bezier(0.3333, 1, 0.6667, 1); }
+[data-8b-live] #method-title > span:nth-of-type(2) > .mt-gap > .mt-chip { animation-name: method-img-mt-chip-translate, method-img-mt-chip-rotate, method-img-mt-chip-scale; animation-range: cover 19.3208vh cover 58.9434vh; animation-timing-function: var(--ease-power2-inout); }
+[data-8b-live] #method-title > span:nth-of-type(3) > .mt-gap > .mt-chip { animation-name: method-img-mt-chip-translate, method-img-mt-chip-rotate, method-img-mt-chip-scale; animation-range: cover 28.3774vh cover 68vh; animation-timing-function: var(--ease-power2-inout); }
+@keyframes method-span-mt-after-translate { 0% { translate: calc(-23.479% - 0.113vw) 0px; } 100% { translate: 0px 0px; } }
+@keyframes method-img-mt-chip-translate { 0% { translate: calc(-146.678% - 0.166vw) -28vh; } 100% { translate: 0px 0px; } }
+@keyframes method-img-mt-chip-rotate { 0% { rotate: -300deg; } 100% { rotate: 0deg; } }
+@keyframes method-img-mt-chip-scale { 0% { scale: 0.45; } 100% { scale: 1; } }
+@keyframes method-span-mt-after-translate-2 { 0% { translate: calc(-80.093% - 0.114vw) 0px; } 100% { translate: 0px 0px; } }
+}
+</style>
+<style data-8b-part="scene:disciplines">
+@layer scenes {
+[data-8b-live] #disciplines .ds-grid { view-timeline: --disciplines-deal block; }
+[data-8b-live] #disciplines .ds-grid > .ds-tile {
+  --disciplines-t: calc((var(--n) - 1) * 0.07 + 0.5);
+  z-index: calc(var(--n) - var(--i));
+  animation-name: disciplines-deal; animation-timeline: --disciplines-deal; animation-fill-mode: both; animation-timing-function: linear(0, 0.0001, 0.0005, 0.0017, 0.004, 0.0078, 0.0135, 0.0214, 0.032, 0.0456, 0.0625, 0.0832, 0.108, 0.1373, 0.1715, 0.2109, 0.256, 0.3071, 0.3645, 0.4287, 0.5, 0.5713, 0.6355, 0.6929, 0.744, 0.7891, 0.8285, 0.8627, 0.892, 0.9168, 0.9375, 0.9544, 0.968, 0.9786, 0.9865, 0.9922, 0.996, 0.9983, 0.9995, 0.9999, 1);
+  animation-range: cover calc(12vh + (var(--disciplines-end, 62vh) - 12vh) * var(--i) * 0.07 / var(--disciplines-t)) cover calc(12vh + (var(--disciplines-end, 62vh) - 12vh) * (var(--i) * 0.07 + 0.5) / var(--disciplines-t));
+}
+@keyframes disciplines-deal { 0% { translate: var(--disciplines-x, 0px) var(--disciplines-y, 0px); rotate: var(--disciplines-tilt, 0deg); scale: var(--disciplines-s, 1); } 100% { translate: 0px 0px; rotate: 0deg; scale: 1; } }
+}
+</style>
+<style data-8b-part="scene:lab">
+@property --lab-a { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+@layer scenes {
+[data-8b-live] #lab .lb-stage { view-timeline: --lab-t1 block; view-timeline-inset: 0; }
+[data-8b-live] #lab .lb-lens, [data-8b-live] #lab .lb-lens > img, [data-8b-live] #lab .lb-ring, [data-8b-live] #lab .lb-ring > circle, [data-8b-live] #lab .lb-notes > li { animation-timeline: --lab-t1; animation-fill-mode: both; }
+[data-8b-live] #lab .lb-lens { animation-name: lab-div-lb-lens-clippath; animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1); }
+[data-8b-live] #lab .lb-lens > img { animation-name: lab-div-lb-lens-img-scale; animation-timing-function: cubic-bezier(0.3333, 1, 0.6667, 1); transform: none; }
+[data-8b-live] #lab .lb-ring { animation-name: lab-svg-lb-ring-rotate; animation-timing-function: cubic-bezier(0.3333, 1, 0.6667, 1); transform: none; }
+[data-8b-live] #lab .lb-ring > circle { animation-name: lab-svg-lb-ring-circle-strokedashoffset; animation-timing-function: linear; }
+[data-8b-live] #lab .lb-notes > li { animation-timing-function: cubic-bezier(0.3333, 1, 0.6667, 1); }
+@keyframes lab-div-lb-lens-clippath { 0% { clip-path: circle(7% at 50% 50%); } 100% { clip-path: circle(50% at 50% 50%); } }
+@keyframes lab-div-lb-lens-img-scale { 0% { scale: 1.5; } 100% { scale: 1; } }
+@keyframes lab-svg-lb-ring-rotate { 0% { rotate: -140deg; } 100% { rotate: 0deg; } }
+@keyframes lab-svg-lb-ring-circle-strokedashoffset { 0% { stroke-dashoffset: 1px; } 99.998% { stroke-dashoffset: 0.0002px; } 100% { stroke-dashoffset: 0px; } }
+@keyframes lab-note-round { 0% { --lab-a: -90deg; } 100% { --lab-a: var(--a); } }
+@keyframes lab-li-lb-note-opacity { 0% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes lab-li-lb-note-translate { 0% { translate: 48px 0px; } 100% { translate: 0px 0px; } }
+@media (min-width: 861px) {
+  [data-8b-live] #lab .lb-lens, [data-8b-live] #lab .lb-lens > img, [data-8b-live] #lab .lb-ring { animation-range: cover 12vh cover calc(46.2963% - 3.7407vh); }
+  [data-8b-live] #lab .lb-ring > circle { animation-range: cover 12vh cover calc(27.7778% + 2.5556vh); }
+  [data-8b-live] #lab .lb-notes > li { animation-range: cover calc(9.2593% + 2.7777% * var(--i) + 8.8519vh - 0.9445vh * var(--i)) cover calc(41.6667% + 2.7777% * var(--i) - 2.1667vh - 0.9444vh * var(--i)); animation-name: lab-note-round, lab-li-lb-note-opacity; transform: rotate(var(--lab-a)) translateX(46cqw) rotate(calc(var(--lab-a) * -1)) translate(-50%, -50%); }
+}
+@media (max-width: 860px) {
+  [data-8b-live] #lab .lb-lens, [data-8b-live] #lab .lb-lens > img, [data-8b-live] #lab .lb-ring { animation-range: cover 12vh cover calc(43.8596% - 2.9123vh); }
+  [data-8b-live] #lab .lb-ring > circle { animation-range: cover 12vh cover calc(26.3158% + 3.0526vh); }
+  [data-8b-live] #lab .lb-notes > li { animation-name: lab-li-lb-note-translate, lab-li-lb-note-opacity; animation-range: cover calc(19.7368% + 3.5088% * var(--i) + 5.2895vh - 1.193vh * var(--i)) cover calc(39.4737% + 3.5088% * var(--i) - 1.4211vh - 1.1929vh * var(--i)); transform: none; }
+}
+}
+</style>
+<style data-8b-part="scene:week">
+@layer scenes {
+[data-8b-live] #week { view-timeline: --week block; }
+[data-8b-live] #week[data-scrubbed] .wk-track { animation-name: week-run; animation-timeline: --week; animation-range: contain 0% contain 100%; animation-timing-function: linear; animation-fill-mode: both; }
+[data-8b-live] #week[data-scrubbed] .wk-progress span { animation-name: week-fill; animation-timeline: --week; animation-range: contain 0% contain 100%; animation-timing-function: linear; animation-fill-mode: both; }
+@keyframes week-run { 0% { translate: 0px 0px; } 100% { translate: calc(var(--week-distance, 0px) * -1) 0px; } }
+@keyframes week-fill { 0% { scale: 0 1; } 100% { scale: 1 1; } }
+}
+</style>
+<style data-8b-part="scene:recovery">
+@layer scenes {
+[data-8b-live] { --ease-power1-inout: linear(0, 0.0013, 0.005, 0.0112, 0.02, 0.0313, 0.045, 0.0612, 0.08, 0.1013, 0.125, 0.1512, 0.18, 0.2112, 0.245, 0.2813, 0.32, 0.3613, 0.405, 0.4512, 0.5, 0.5487, 0.595, 0.6388, 0.68, 0.7188, 0.755, 0.7887, 0.82, 0.8488, 0.875, 0.8988, 0.92, 0.9387, 0.955, 0.9688, 0.98, 0.9888, 0.995, 0.9988, 1); }
+[data-8b-live] #recovery .rc-window { view-timeline: --recovery-t1 block; view-timeline-inset: 0; }
+[data-8b-live] #recovery .rc-sun, [data-8b-live] #recovery .rc-cool, [data-8b-live] #recovery .rc-sea > img { animation-timeline: --recovery-t1; animation-range: cover 8vh cover 50%; animation-fill-mode: both; }
+[data-8b-live] #recovery .rc-sun { animation-timing-function: var(--ease-power1-inout), cubic-bezier(0.45, 0, 0.55, 1); transform: none; }
+[data-8b-live] #recovery .rc-cool { animation-name: recovery-div-rc-cool-opacity; animation-timing-function: linear; }
+[data-8b-live] #recovery .rc-sea > img { animation-name: recovery-div-rc-sea-img-translate, recovery-div-rc-sea-img-scale; animation-timing-function: linear; transform: none; }
+@keyframes recovery-span-rc-sun-translate-d { 0% { translate: 0px calc(-110% + 110.03px); } 100% { translate: 0px 110.03px; } }
+@keyframes recovery-span-rc-sun-translate-m { 0% { translate: 0px -64%; } 100% { translate: 0px 46%; } }
+@keyframes recovery-span-rc-sun-scale { 0% { scale: 0.8; } 100% { scale: 1; } }
+@keyframes recovery-div-rc-cool-opacity { 0% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes recovery-div-rc-sea-img-translate { 0% { translate: 0px -5%; } 100% { translate: 0px 0px; } }
+@keyframes recovery-div-rc-sea-img-scale { 0% { scale: 1.12; } 100% { scale: 1; } }
+@media (min-width: 861px) {
+  [data-8b-live] #recovery .rc-sun { animation-name: recovery-span-rc-sun-translate-d, recovery-span-rc-sun-scale; }
+}
+@media (max-width: 860px) {
+  [data-8b-live] #recovery .rc-sun { animation-name: recovery-span-rc-sun-translate-m, recovery-span-rc-sun-scale; }
+}
+}
+</style>
+<style data-8b-part="scene:faq">
+@layer scenes {
+[data-8b-live] #faq .fq-list { view-timeline: --faq-list block; }
+[data-8b-live] #faq { timeline-scope: --faq-list; }
+[data-8b-live] #faq .fq-ball { animation-name: faq-roll; animation-timeline: --faq-list; animation-range: cover 28vh cover calc(100% - 72vh); animation-timing-function: linear; animation-fill-mode: both; }
+@keyframes faq-roll { 0% { translate: 0px 0px; rotate: 0deg; } 100% { translate: 0px var(--faq-travel, 0px); rotate: var(--faq-turn, 0deg); } }
+}
+</style>
+<style data-8b-part="scene:contact">
+@layer scenes {
+[data-8b-live] #contact .ct-run { view-timeline: --contact-run block; }
+[data-8b-live] #contact .ct-line, [data-8b-live] #contact-title { animation-timeline: --contact-run; animation-range: cover 8vh cover 62vh; animation-fill-mode: both; animation-timing-function: linear(0, 0.0001, 0.0005, 0.0017, 0.004, 0.0078, 0.0135, 0.0214, 0.032, 0.0456, 0.0625, 0.0832, 0.108, 0.1373, 0.1715, 0.2109, 0.256, 0.3071, 0.3645, 0.4287, 0.5, 0.5713, 0.6355, 0.6929, 0.744, 0.7891, 0.8285, 0.8627, 0.892, 0.9168, 0.9375, 0.9544, 0.968, 0.9786, 0.9865, 0.9922, 0.996, 0.9983, 0.9995, 0.9999, 1); }
+[data-8b-live] #contact .ct-line { animation-name: contact-line; }
+[data-8b-live] #contact-title { animation-name: contact-title; }
+@keyframes contact-line { 0% { scale: var(--contact-line, 1) 1; } 100% { scale: 1 1; } }
+@keyframes contact-title { 0% { translate: var(--contact-travel, 0px) 0px; transform: skewX(-16deg); } 100% { translate: 0px 0px; transform: skewX(0deg); } }
+}
+</style>
+<script data-8b-part="motion-gate">
+if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.supports('animation-timeline: view()')) document.documentElement.setAttribute('data-8b-live', '');
+</script>
 </head>
 <body>
 <!-- navigation: top bar: wordmark, a short tagline, section links, Book a test button; phone menu overlay -->
@@ -596,7 +767,7 @@ main { overflow-x: clip; }
     <a class="nav__logo" href="#opening" aria-label="Arcline, back to the top">arcline<sup>®</sup></a>
     <p class="nav__line m-text-4">Measured training for five sports</p>
     <nav aria-label="Main">
-      <ul class="nav__links">
+      <ul class="nav__links" data-8b-items=":scope > li">
         <li><a class="m-link" href="#method">Method</a></li>
         <li><a class="m-link" href="#disciplines">Sports</a></li>
         <li><a class="m-link" href="#lab">Lab</a></li>
@@ -608,10 +779,10 @@ main { overflow-x: clip; }
     <a class="m-btn nav__cta" href="#contact"><span class="m-btn__label">Book a test</span></a>
     <button class="m-iconbtn nav__menu" type="button" aria-expanded="false" aria-controls="menu"><span class="sr-only">Open the menu</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 9h16M4 15h16"/></svg></button>
   </div>
-  <div class="menu" id="menu" data-lenis-prevent hidden>
+  <div class="menu" id="menu" hidden>
     <button class="m-iconbtn menu__close" type="button"><span class="sr-only">Close the menu</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <nav aria-label="Menu">
-      <ul class="menu__links">
+      <ul class="menu__links" data-8b-items=":scope > li">
         <li><a class="m-text-3" href="#method">Method</a></li>
         <li><a class="m-text-3" href="#disciplines">Sports</a></li>
         <li><a class="m-text-3" href="#lab">Lab</a></li>
@@ -631,7 +802,7 @@ main { overflow-x: clip; }
     <div class="op-ground" aria-hidden="true"></div>
     <div class="op-frame">
       <div class="op-slide m-slide-2">
-        <div class="op-photo"><img style="background:#26738c" src="https://images.unsplash.com/photo-1650496760462-cb983aca287d?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8OHx8dGVubmlzJTIwcmFja2V0JTIwYmFsbHxlbnwxfDB8fHwxNzkxMjMyMTU4fDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=1060&amp;q=60" alt="A tennis racket and ball lying on a blue court" width="1600" height="1025" fetchpriority="high"></div>
+        <div class="op-photo"><img src="https://images.unsplash.com/photo-1650496760462-cb983aca287d?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8OHx8dGVubmlzJTIwcmFja2V0JTIwYmFsbHxlbnwxfDB8fHwxNzkxMjMyMTU4fDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=1060&amp;q=60" alt="A tennis racket and ball lying on a blue court" width="1600" height="1025" fetchpriority="high"></div>
         <div class="op-ring" aria-hidden="true"><span class="op-ring__orb m-orb"></span></div>
         <h1 class="op-title m-text-2" id="opening-title">
           <span class="op-line op-line--1" style="--len:11"><span class="op-line__in">Faster than</span></span>
@@ -653,7 +824,7 @@ main { overflow-x: clip; }
     <div class="op-card m-slide-3">
       <h2 class="op-title2 m-text-2" style="--len:13">Only forward<sup>®</sup></h2>
       <span class="op-orb m-orb" aria-hidden="true"></span>
-      <img style="background:#c0c0c0" class="op-chip m-chip" src="https://images.unsplash.com/photo-1726195221766-e4594ff9d025?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Mnx8ZmVtYWxlJTIwYXRobGV0ZSUyMHBvcnRyYWl0fGVufDF8MXx8fDE3OTEyMzIyMjV8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=110&amp;h=110&amp;q=60" alt="" width="400" height="400" loading="lazy">
+      <img class="op-chip m-chip" src="https://images.unsplash.com/photo-1726195221766-e4594ff9d025?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Mnx8ZmVtYWxlJTIwYXRobGV0ZSUyMHBvcnRyYWl0fGVufDF8MXx8fDE3OTEyMzIyMjV8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=120&amp;h=120&amp;q=60" alt="" width="400" height="400" loading="lazy">
       <div class="op-cols">
         <p class="m-text">Every member starts with a lab test and leaves each block with a retest. The plan in between is written from those numbers, not from a template.</p>
         <p class="m-text">One coach, one engine, five sports. Whether you chase a marathon, a tie-break or a deadlift, the work is measured the same way.</p>
@@ -667,7 +838,7 @@ main { overflow-x: clip; }
   <div class="mt-slide m-slide">
     <div class="mt-side">
       <span class="mt-orb m-orb" aria-hidden="true"></span>
-      <ol class="mt-steps" data-8b-motion="rise">
+      <ol class="mt-steps" data-8b-items=":scope > li" data-8b-fixed="3" data-8b-motion="rise" data-8b-enter="86%">
         <li><span class="mt-num m-text-4">01</span><h3 class="m-text-6">Test</h3><p class="m-text">Two hours in the lab: threshold, VO₂, gait or stroke on video and your strength ratios.</p></li>
         <li><span class="mt-num m-text-4">02</span><h3 class="m-text-6">Train</h3><p class="m-text">Twelve weeks written from those numbers and adjusted every Sunday by your coach.</p></li>
         <li><span class="mt-num m-text-4">03</span><h3 class="m-text-6">Transfer</h3><p class="m-text">Race-specific blocks, then a retest, so the gain shows up where it counts: on the clock.</p></li>
@@ -675,9 +846,9 @@ main { overflow-x: clip; }
     </div>
     <div class="mt-main">
       <h2 class="mt-title m-text-3" id="method-title">
-        <span class="mt-row">Tested <span class="mt-gap"><img style="background:#262626" class="mt-chip m-chip" src="https://images.unsplash.com/photo-1726195221775-e1d394a19f02?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8ZmVtYWxlJTIwYXRobGV0ZSUyMHBvcnRyYWl0fGVufDF8MXx8fDE3OTEyMzIyMjV8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=70&amp;h=70&amp;q=60" alt="" width="240" height="240" loading="lazy"></span> <span class="mt-after">Monday.</span></span>
-        <span class="mt-row">Faster <span class="mt-gap"><img style="background:#0c2626" class="mt-chip m-chip" src="https://images.unsplash.com/photo-1637071692126-d0ee7df18271?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Nnx8dGVubmlzJTIwcGxheWVyJTIwc2VydmV8ZW58MXwxfHx8MTc5MTIzMjIyNXww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=70&amp;h=70&amp;q=60" alt="" width="240" height="240" loading="lazy"></span> <span class="mt-after">by</span></span>
-        <span class="mt-row">spring <span class="mt-gap"><img style="background:#8c8ca6" class="mt-chip m-chip" src="https://images.unsplash.com/photo-1650805174807-22bc9bc0f608?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8OXx8Y3ljbGlzdCUyMG1vdGlvbiUyMGJsdXJ8ZW58MXwxfHx8MTc5MTIzMjE1OXww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=70&amp;h=70&amp;q=60" alt="" width="240" height="240" loading="lazy"></span></span>
+        <span class="mt-row">Tested <span class="mt-gap"><img class="mt-chip m-chip" src="https://images.unsplash.com/photo-1726195221775-e1d394a19f02?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8ZmVtYWxlJTIwYXRobGV0ZSUyMHBvcnRyYWl0fGVufDF8MXx8fDE3OTEyMzIyMjV8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=40&amp;h=40&amp;q=60" alt="" width="240" height="240" loading="lazy"></span> <span class="mt-after">Monday.</span></span>
+        <span class="mt-row">Faster <span class="mt-gap"><img class="mt-chip m-chip" src="https://images.unsplash.com/photo-1637071692126-d0ee7df18271?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Nnx8dGVubmlzJTIwcGxheWVyJTIwc2VydmV8ZW58MXwxfHx8MTc5MTIzMjIyNXww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=40&amp;h=40&amp;q=60" alt="" width="240" height="240" loading="lazy"></span> <span class="mt-after">by</span></span>
+        <span class="mt-row">spring <span class="mt-gap"><img class="mt-chip m-chip" src="https://images.unsplash.com/photo-1650805174807-22bc9bc0f608?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8OXx8Y3ljbGlzdCUyMG1vdGlvbiUyMGJsdXJ8ZW58MXwxfHx8MTc5MTIzMjE1OXww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=40&amp;h=40&amp;q=60" alt="" width="240" height="240" loading="lazy"></span></span>
       </h2>
       <div class="mt-foot">
         <p class="m-text-5">Every block starts with a measurement and ends with a retest. You see what changed in numbers you can check, not in a feeling after a hard week.</p>
@@ -691,19 +862,19 @@ main { overflow-x: clip; }
 <section id="disciplines" class="l-sec" data-8b-section="disciplines" aria-labelledby="disciplines-title">
   <div class="ds-slide m-slide">
     <h2 class="ds-title m-text-3" id="disciplines-title" style="--len:22" data-8b-motion="streak"><span>Breathe.</span> <span>Move.</span> <span>Repeat.</span></h2>
-    <div class="ds-grid">
-      <figure class="ds-tile ds-tile--lift"><img style="background:#262626" src="https://images.unsplash.com/photo-1733517301178-312a6f694f2d?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NHx8ZHVtYmJlbGxzJTIwZ3ltfGVufDF8Mnx8fDE3OTEyMzIyMjR8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=250&amp;q=60" alt="An athlete bench-pressing a barbell in a dark gym" width="600" height="636" loading="lazy"><figcaption class="m-badge">Strength</figcaption></figure>
-      <div class="ds-tile ds-tile--mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></div>
-      <figure class="ds-tile ds-tile--run"><img style="background:#73738c" src="https://images.unsplash.com/photo-1759674861540-afed9f86f94a?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Mnx8cnVubmVyJTIwbW90aW9uJTIwYmx1cnxlbnwxfDF8fHwxNzkxMjMyMTU5fDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=520&amp;q=60" alt="Runners in a race, blurred by their speed" width="900" height="1350" loading="lazy"><figcaption class="m-badge">Running</figcaption></figure>
+    <div class="ds-grid" data-8b-items=":scope > .ds-tile" data-8b-fixed="8">
+      <figure class="ds-tile ds-tile--lift" style="--disciplines-tilt: -8deg"><img src="https://images.unsplash.com/photo-1733517301178-312a6f694f2d?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NHx8ZHVtYmJlbGxzJTIwZ3ltfGVufDF8Mnx8fDE3OTEyMzIyMjR8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=280&amp;q=60" alt="An athlete bench-pressing a barbell in a dark gym" width="600" height="636" loading="lazy"><figcaption class="m-badge">Strength</figcaption></figure>
+      <div class="ds-tile ds-tile--mark" aria-hidden="true" style="--disciplines-tilt: 5deg"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></div>
+      <figure class="ds-tile ds-tile--run" style="--disciplines-tilt: -3deg"><img src="https://images.unsplash.com/photo-1759674861540-afed9f86f94a?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Mnx8cnVubmVyJTIwbW90aW9uJTIwYmx1cnxlbnwxfDF8fHwxNzkxMjMyMTU5fDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=360&amp;q=60" alt="Runners in a race, blurred by their speed" width="900" height="1350" loading="lazy"><figcaption class="m-badge">Running</figcaption></figure>
       <div class="ds-copy">
         <p class="m-text">Run, ride, swim, court, strength. The sport changes; the questions don't: where your threshold sits, what limits it and what moves it fastest.</p>
         <p class="m-text">Mixed weeks are welcome. One engine profile serves every sport you train.</p>
       </div>
-      <figure class="ds-tile ds-tile--ride"><img style="background:#a6a6a6" src="https://images.unsplash.com/photo-1715900677967-fb67cee16359?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8Y3ljbGlzdCUyMG1vdGlvbiUyMGJsdXJ8ZW58MXwxfHx8MTc5MTIzMjE1OXww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=380&amp;q=60" alt="A cyclist riding fast along a blurred path" width="600" height="750" loading="lazy"><figcaption class="m-badge">Cycling</figcaption></figure>
-      <figure class="ds-tile ds-tile--swim"><img style="background:#262640" src="https://images.unsplash.com/photo-1461567933755-6c82be2197da?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NHx8c3dpbW1lciUyMHVuZGVyd2F0ZXIlMjBibHVlfGVufDF8MHx8fDE3OTEyMzIxODN8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=560&amp;q=60" alt="A swimmer gliding underwater along a pool lane" width="900" height="506" loading="lazy"><figcaption class="m-badge">Swimming</figcaption></figure>
-      <figure class="ds-tile ds-tile--kit"><img style="background:#d9d9d9" src="https://images.unsplash.com/photo-1591700151209-540626cf808c?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NHx8d2hpdGUlMjBydW5uaW5nJTIwc2hvZSUyMG1pbmltYWx8ZW58MXwyfHx8MTc5MTIzMjE4NHww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=250&amp;q=60" alt="White sneakers stepping across a pale floor" width="500" height="469" loading="lazy"><figcaption class="m-badge">Gait fitting</figcaption></figure>
-      <figure class="ds-tile ds-tile--court"><img style="background:#73a6c0" src="https://images.unsplash.com/photo-1714841197541-aa64d90cb6a8?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8dGVubmlzJTIwcGxheWVyJTIwc2VydmV8ZW58MXwxfHx8MTc5MTIzMjIyNXww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=520&amp;q=60" alt="A tennis player swinging on a blue and green court" width="900" height="1013" loading="lazy"><figcaption class="m-badge">Court sports</figcaption></figure>
-      <a class="ds-tile ds-tile--link" href="#week"><svg aria-hidden="true" viewBox="0 0 52 52"><circle cx="26" cy="26" r="25"/><path d="M18 26h16M28 20l6 6-6 6"/></svg><span class="m-text-4">See a training week</span></a>
+      <figure class="ds-tile ds-tile--ride" style="--disciplines-tilt: 9deg"><img src="https://images.unsplash.com/photo-1715900677967-fb67cee16359?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8Y3ljbGlzdCUyMG1vdGlvbiUyMGJsdXJ8ZW58MXwxfHx8MTc5MTIzMjE1OXww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=350&amp;q=60" alt="A cyclist riding fast along a blurred path" width="600" height="750" loading="lazy"><figcaption class="m-badge">Cycling</figcaption></figure>
+      <figure class="ds-tile ds-tile--swim" style="--disciplines-tilt: -6deg"><img src="https://images.unsplash.com/photo-1461567933755-6c82be2197da?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NHx8c3dpbW1lciUyMHVuZGVyd2F0ZXIlMjBibHVlfGVufDF8MHx8fDE3OTEyMzIxODN8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=360&amp;q=60" alt="A swimmer gliding underwater along a pool lane" width="900" height="506" loading="lazy"><figcaption class="m-badge">Swimming</figcaption></figure>
+      <figure class="ds-tile ds-tile--kit" style="--disciplines-tilt: 3deg"><img src="https://images.unsplash.com/photo-1591700151209-540626cf808c?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NHx8d2hpdGUlMjBydW5uaW5nJTIwc2hvZSUyMG1pbmltYWx8ZW58MXwyfHx8MTc5MTIzMjE4NHww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=260&amp;q=60" alt="White sneakers stepping across a pale floor" width="500" height="469" loading="lazy"><figcaption class="m-badge">Gait fitting</figcaption></figure>
+      <figure class="ds-tile ds-tile--court" style="--disciplines-tilt: -10deg"><img src="https://images.unsplash.com/photo-1714841197541-aa64d90cb6a8?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8dGVubmlzJTIwcGxheWVyJTIwc2VydmV8ZW58MXwxfHx8MTc5MTIzMjIyNXww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=370&amp;q=60" alt="A tennis player swinging on a blue and green court" width="900" height="1013" loading="lazy"><figcaption class="m-badge">Court sports</figcaption></figure>
+      <a class="ds-tile ds-tile--link" href="#week" style="--disciplines-tilt: 6deg"><svg aria-hidden="true" viewBox="0 0 52 52"><circle cx="26" cy="26" r="25"/><path d="M18 26h16M28 20l6 6-6 6"/></svg><span class="m-text-4">See a training week</span></a>
       <p class="ds-note m-text-6">Bring the sport you love. We bring the lab, the plan and a coach who has raced it.</p>
     </div>
   </div>
@@ -712,16 +883,16 @@ main { overflow-x: clip; }
 <!-- coaches: four coach portraits of different heights with names and roles -->
 <section id="coaches" class="l-sec" data-8b-section="coaches" aria-labelledby="coaches-title">
   <div class="co-slide m-slide-3">
-    <svg class="co-ring" data-8b-motion="orbit" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="199" pathLength="1"/><circle cx="200" cy="200" r="140" pathLength="1"/></svg>
+    <svg class="co-ring" data-8b-motion="orbit" viewBox="0 0 400 400" aria-hidden="true" data-8b-items=":scope > circle"><circle cx="200" cy="200" r="199" pathLength="1"/><circle cx="200" cy="200" r="140" pathLength="1"/></svg>
     <div class="co-head">
       <h2 class="m-text-3" id="coaches-title" data-8b-motion="streak">Coached by people who still race</h2>
       <p class="m-text-5">Every coach holds a sport-science degree and a current race licence. You keep the same coach from the first test to the last retest.</p>
     </div>
-    <ul class="co-list">
-      <li class="co-person"><figure><div class="co-photo"><img style="background:#262626" data-8b-motion="focus" src="https://images.unsplash.com/photo-1764854562264-aeb31b72ac3f?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NXx8YXRobGV0ZSUyMHBvcnRyYWl0JTIwc3R1ZGlvJTIwZGFya3xlbnwxfDF8fHwxNzkxMjMyMTgzfDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=270&amp;q=60" alt="Portrait of coach Daniel Okafor with his arms crossed" width="600" height="750" loading="lazy"></div><figcaption><strong class="m-text-6">Daniel Okafor</strong><span class="m-text-4">Head coach · running and triathlon</span></figcaption></figure></li>
-      <li class="co-person"><figure><div class="co-photo"><img style="background:#262626" data-8b-motion="focus" src="https://images.unsplash.com/photo-1788500657746-62783573819c?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8YXRobGV0ZSUyMHBvcnRyYWl0JTIwc3R1ZGlvJTIwZGFya3xlbnwxfDF8fHwxNzkxMjMyMTgzfDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=260&amp;q=60" alt="Portrait of coach Maya Ferreira looking over her shoulder" width="600" height="900" loading="lazy"></div><figcaption><strong class="m-text-6">Maya Ferreira</strong><span class="m-text-4">Court sports and strength</span></figcaption></figure></li>
-      <li class="co-person"><figure><div class="co-photo"><img style="background:#262626" data-8b-motion="focus" src="https://images.unsplash.com/photo-1674736384543-9842d8ac7484?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NXx8c3BvcnRzbWFuJTIwcG9ydHJhaXQlMjBibGFjayUyMGJhY2tncm91bmQlMjB0LXNoaXJ0fGVufDF8MXx8fDE3OTEyNzI1NDJ8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=250&amp;q=60" alt="Coach Tomas Lindqvist in profile, smiling, in a dark studio" width="600" height="900" loading="lazy"></div><figcaption><strong class="m-text-6">Tomas Lindqvist</strong><span class="m-text-4">Lab lead · cycling</span></figcaption></figure></li>
-      <li class="co-person"><figure><div class="co-photo"><img style="background:#c0c0c0" data-8b-motion="focus" src="https://images.unsplash.com/photo-1726195221849-b92352fcc89e?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8M3x8ZmVtYWxlJTIwYXRobGV0ZSUyMHBvcnRyYWl0fGVufDF8MXx8fDE3OTEyMzIyMjV8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=250&amp;q=60" alt="Coach Ines Varga stretching before a session" width="600" height="900" loading="lazy"></div><figcaption><strong class="m-text-6">Ines Varga</strong><span class="m-text-4">Swimming and mobility</span></figcaption></figure></li>
+    <ul class="co-list" data-8b-items=":scope > li">
+      <li class="co-person"><figure><div class="co-photo"><img data-8b-motion="focus" data-8b-enter="85%" src="https://images.unsplash.com/photo-1764854562264-aeb31b72ac3f?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NXx8YXRobGV0ZSUyMHBvcnRyYWl0JTIwc3R1ZGlvJTIwZGFya3xlbnwxfDF8fHwxNzkxMjMyMTgzfDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=60" alt="Portrait of coach Daniel Okafor with his arms crossed" width="600" height="750" loading="lazy"></div><figcaption><strong class="m-text-6">Daniel Okafor</strong><span class="m-text-4">Head coach · running and triathlon</span></figcaption></figure></li>
+      <li class="co-person"><figure><div class="co-photo"><img data-8b-motion="focus" data-8b-enter="85%" src="https://images.unsplash.com/photo-1788500657746-62783573819c?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8YXRobGV0ZSUyMHBvcnRyYWl0JTIwc3R1ZGlvJTIwZGFya3xlbnwxfDF8fHwxNzkxMjMyMTgzfDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=290&amp;q=60" alt="Portrait of coach Maya Ferreira looking over her shoulder" width="600" height="900" loading="lazy"></div><figcaption><strong class="m-text-6">Maya Ferreira</strong><span class="m-text-4">Court sports and strength</span></figcaption></figure></li>
+      <li class="co-person"><figure><div class="co-photo"><img data-8b-motion="focus" data-8b-enter="85%" src="https://images.unsplash.com/photo-1674736384543-9842d8ac7484?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NXx8c3BvcnRzbWFuJTIwcG9ydHJhaXQlMjBibGFjayUyMGJhY2tncm91bmQlMjB0LXNoaXJ0fGVufDF8MXx8fDE3OTEyNzI1NDJ8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=290&amp;q=60" alt="Coach Tomas Lindqvist in profile, smiling, in a dark studio" width="600" height="900" loading="lazy"></div><figcaption><strong class="m-text-6">Tomas Lindqvist</strong><span class="m-text-4">Lab lead · cycling</span></figcaption></figure></li>
+      <li class="co-person"><figure><div class="co-photo"><img data-8b-motion="focus" data-8b-enter="85%" src="https://images.unsplash.com/photo-1726195221849-b92352fcc89e?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8M3x8ZmVtYWxlJTIwYXRobGV0ZSUyMHBvcnRyYWl0fGVufDF8MXx8fDE3OTEyMzIyMjV8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=290&amp;q=60" alt="Coach Ines Varga stretching before a session" width="600" height="900" loading="lazy"></div><figcaption><strong class="m-text-6">Ines Varga</strong><span class="m-text-4">Swimming and mobility</span></figcaption></figure></li>
     </ul>
   </div>
 </section>
@@ -736,9 +907,9 @@ main { overflow-x: clip; }
       <a class="m-link" href="#contact">Book a lab test</a>
     </div>
     <div class="lb-stage">
-      <div class="lb-lens"><img style="background:#d9d9d9" src="https://images.unsplash.com/photo-1638183395699-2c0db5b6afbb?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8dHJlYWRtaWxsJTIwcnVubmluZyUyMHRlc3QlMjBsYWJ8ZW58MXwwfHx8MTc5MTIzMjE4NHww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=590&amp;q=60" alt="An athlete running on a treadmill in a bright test lab" width="900" height="600" loading="lazy"></div>
+      <div class="lb-lens"><img src="https://images.unsplash.com/photo-1638183395699-2c0db5b6afbb?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8dHJlYWRtaWxsJTIwcnVubmluZyUyMHRlc3QlMjBsYWJ8ZW58MXwwfHx8MTc5MTIzMjE4NHww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=880&amp;q=60" alt="An athlete running on a treadmill in a bright test lab" width="900" height="600" loading="lazy"></div>
       <svg class="lb-ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
-      <ul class="lb-notes">
+      <ul class="lb-notes" data-8b-items=":scope > li" data-8b-fixed="4">
         <li class="lb-note" style="--a:-38deg"><strong class="m-text-6">VO₂ max</strong><span class="m-text-4">The ceiling of your engine</span></li>
         <li class="lb-note" style="--a:38deg"><strong class="m-text-6">Threshold</strong><span class="m-text-4">The pace you can hold for an hour</span></li>
         <li class="lb-note" style="--a:142deg"><strong class="m-text-6">Gait and stroke</strong><span class="m-text-4">Video, frame by frame</span></li>
@@ -756,14 +927,14 @@ main { overflow-x: clip; }
       <p class="m-text-5">Sessions run before work and after it, so training fits a life instead of replacing it. Most members mix three sports in one week.</p>
     </div>
     <div class="wk-view">
-      <ol class="wk-track">
-        <li class="wk-day m-slide"><h3 class="m-text-6">Monday</h3><p class="m-text-5">Retest and easy spin</p><p class="m-text wk-time">06:30 · Lab and bike room</p><p class="m-text">A short read of last week's data with your coach, then forty easy minutes.</p><div class="wk-photo"><img style="background:#d9d9d9" src="https://images.unsplash.com/photo-1637714409323-d5e6e9731252?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Nnx8dHJlYWRtaWxsJTIwcnVubmluZyUyMHRlc3QlMjBsYWJ8ZW58MXwwfHx8MTc5MTIzMjE4NHww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="An athlete walking on a treadmill in a white studio" width="600" height="400" loading="lazy"></div></li>
-        <li class="wk-day m-slide"><h3 class="m-text-6">Tuesday</h3><p class="m-text-5">Track intervals</p><p class="m-text wk-time">06:30 · Outdoor track</p><p class="m-text">Threshold repeats paced from your lab numbers, in groups of four.</p><div class="wk-photo"><img style="background:#d9d9d9" src="https://images.unsplash.com/photo-1744706908605-ac30eb45f98c?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Nnx8cnVubmVyJTIwbW90aW9uJTIwYmx1cnxlbnwxfDF8fHwxNzkxMjMyMTU5fDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="A runner in motion against a blurred street" width="600" height="400" loading="lazy"></div></li>
-        <li class="wk-day m-slide"><h3 class="m-text-6">Wednesday</h3><p class="m-text-5">Strength and mobility</p><p class="m-text wk-time">18:00 · Gym floor</p><p class="m-text">Heavy, short and technical: the lifts that protect a season, coached rep by rep.</p><div class="wk-photo"><img style="background:#262626" src="https://images.unsplash.com/photo-1706029831405-619b27e3260c?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8ZGVhZGxpZnQlMjBiYXJiZWxsfGVufDF8MHx8fDE3OTEyNzM3NDZ8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="An athlete setting up a deadlift, hands on the bar and feet under it" width="600" height="400" loading="lazy"></div></li>
-        <li class="wk-day m-slide"><h3 class="m-text-6">Thursday</h3><p class="m-text-5">Pool technique</p><p class="m-text wk-time">07:00 · 25 m pool</p><p class="m-text">Stroke video on the deck, drills in the water, one change at a time.</p><div class="wk-photo"><img style="background:#0c2626" src="https://images.unsplash.com/photo-1710739513833-48b074290a8e?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8M3x8c3dpbW1lciUyMGZyZWVzdHlsZSUyMHN0cm9rZSUyMHBvb2x8ZW58MXwwfHx8MTc5MTI3MjM1Mnww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="A swimmer in a white cap mid butterfly stroke in a dark pool" width="600" height="400" loading="lazy"></div></li>
-        <li class="wk-day wk-day--rest m-slide"><h3 class="m-text-6">Friday</h3><p class="m-text-5">Rest, sauna and cold</p><p class="m-text wk-time">Any time · Recovery suite</p><p class="m-text">The day the training turns into fitness. Book the plunge or just sleep in.</p><div class="wk-photo"><img style="background:#f3f3f3" src="https://images.unsplash.com/photo-1712659606957-b7395ba9ebb2?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NXx8c2F1bmElMjB3b29kZW4lMjBpbnRlcmlvcnxlbnwxfDB8fHwxNzkxMjczNzI5fDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="A dark wooden sauna with a window onto snow" width="600" height="400" loading="lazy"></div></li>
-        <li class="wk-day m-slide"><h3 class="m-text-6">Saturday</h3><p class="m-text-5">Long ride or long run</p><p class="m-text wk-time">08:00 · From the club</p><p class="m-text">Steady hours with a coach on the bike, coffee at the turn.</p><div class="wk-photo"><img style="background:#d9d9d9" src="https://images.unsplash.com/photo-1744706908540-c7450689a30a?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Mnx8Y3ljbGlzdCUyMG1vdGlvbiUyMGJsdXJ8ZW58MXwxfHx8MTc5MTIzMjE1OXww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="A rider blurred by speed in black and white" width="600" height="400" loading="lazy"></div></li>
-        <li class="wk-day m-slide"><h3 class="m-text-6">Sunday</h3><p class="m-text-5">Court drills and review</p><p class="m-text wk-time">10:00 · Courts 1–3</p><p class="m-text">Footwork and serve work, then ten minutes on the week ahead.</p><div class="wk-photo"><img style="background:#0cc0f3" src="https://images.unsplash.com/photo-1646503429996-3b7df2706145?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8dGVubmlzJTIwcmFja2V0JTIwYmx1ZSUyMHNoYWRvd3xlbnwxfDB8fHwxNzkxMjMyMTgyfDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="A tennis player standing on a bright blue court" width="600" height="400" loading="lazy"></div></li>
+      <ol class="wk-track" data-8b-items=":scope > li" data-8b-fixed="7">
+        <li class="wk-day m-slide"><h3 class="m-text-6">Monday</h3><p class="m-text-5">Retest and easy spin</p><p class="m-text wk-time">06:30 · Lab and bike room</p><p class="m-text">A short read of last week's data with your coach, then forty easy minutes.</p><div class="wk-photo"><img src="https://images.unsplash.com/photo-1637714409323-d5e6e9731252?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Nnx8dHJlYWRtaWxsJTIwcnVubmluZyUyMHRlc3QlMjBsYWJ8ZW58MXwwfHx8MTc5MTIzMjE4NHww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="An athlete walking on a treadmill in a white studio" width="600" height="400" loading="lazy"></div></li>
+        <li class="wk-day m-slide"><h3 class="m-text-6">Tuesday</h3><p class="m-text-5">Track intervals</p><p class="m-text wk-time">06:30 · Outdoor track</p><p class="m-text">Threshold repeats paced from your lab numbers, in groups of four.</p><div class="wk-photo"><img src="https://images.unsplash.com/photo-1744706908605-ac30eb45f98c?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Nnx8cnVubmVyJTIwbW90aW9uJTIwYmx1cnxlbnwxfDF8fHwxNzkxMjMyMTU5fDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="A runner in motion against a blurred street" width="600" height="400" loading="lazy"></div></li>
+        <li class="wk-day m-slide"><h3 class="m-text-6">Wednesday</h3><p class="m-text-5">Strength and mobility</p><p class="m-text wk-time">18:00 · Gym floor</p><p class="m-text">Heavy, short and technical: the lifts that protect a season, coached rep by rep.</p><div class="wk-photo"><img src="https://images.unsplash.com/photo-1706029831405-619b27e3260c?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8ZGVhZGxpZnQlMjBiYXJiZWxsfGVufDF8MHx8fDE3OTEyNzM3NDZ8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="An athlete setting up a deadlift, hands on the bar and feet under it" width="600" height="400" loading="lazy"></div></li>
+        <li class="wk-day m-slide"><h3 class="m-text-6">Thursday</h3><p class="m-text-5">Pool technique</p><p class="m-text wk-time">07:00 · 25 m pool</p><p class="m-text">Stroke video on the deck, drills in the water, one change at a time.</p><div class="wk-photo"><img src="https://images.unsplash.com/photo-1710739513833-48b074290a8e?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8M3x8c3dpbW1lciUyMGZyZWVzdHlsZSUyMHN0cm9rZSUyMHBvb2x8ZW58MXwwfHx8MTc5MTI3MjM1Mnww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="A swimmer in a white cap mid butterfly stroke in a dark pool" width="600" height="400" loading="lazy"></div></li>
+        <li class="wk-day wk-day--rest m-slide"><h3 class="m-text-6">Friday</h3><p class="m-text-5">Rest, sauna and cold</p><p class="m-text wk-time">Any time · Recovery suite</p><p class="m-text">The day the training turns into fitness. Book the plunge or just sleep in.</p><div class="wk-photo"><img src="https://images.unsplash.com/photo-1712659606957-b7395ba9ebb2?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NXx8c2F1bmElMjB3b29kZW4lMjBpbnRlcmlvcnxlbnwxfDB8fHwxNzkxMjczNzI5fDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="A dark wooden sauna with a window onto snow" width="600" height="400" loading="lazy"></div></li>
+        <li class="wk-day m-slide"><h3 class="m-text-6">Saturday</h3><p class="m-text-5">Long ride or long run</p><p class="m-text wk-time">08:00 · From the club</p><p class="m-text">Steady hours with a coach on the bike, coffee at the turn.</p><div class="wk-photo"><img src="https://images.unsplash.com/photo-1744706908540-c7450689a30a?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8Mnx8Y3ljbGlzdCUyMG1vdGlvbiUyMGJsdXJ8ZW58MXwxfHx8MTc5MTIzMjE1OXww&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="A rider blurred by speed in black and white" width="600" height="400" loading="lazy"></div></li>
+        <li class="wk-day m-slide"><h3 class="m-text-6">Sunday</h3><p class="m-text-5">Court drills and review</p><p class="m-text wk-time">10:00 · Courts 1–3</p><p class="m-text">Footwork and serve work, then ten minutes on the week ahead.</p><div class="wk-photo"><img src="https://images.unsplash.com/photo-1646503429996-3b7df2706145?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8dGVubmlzJTIwcmFja2V0JTIwYmx1ZSUyMHNoYWRvd3xlbnwxfDB8fHwxNzkxMjMyMTgyfDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=420&amp;q=60" alt="A tennis player standing on a bright blue court" width="600" height="400" loading="lazy"></div></li>
       </ol>
     </div>
     <div class="wk-progress" aria-hidden="true"><span></span></div>
@@ -775,10 +946,10 @@ main { overflow-x: clip; }
   <div class="st-slide m-slide-3">
     <h2 class="st-label m-text-6" id="stories-title">Members, retested</h2>
     <figure class="st-main">
-      <blockquote data-8b-motion="streak" data-from="left"><p class="m-text-7"><img style="background:#595959" class="st-chip m-chip" data-8b-motion="focus" src="https://images.unsplash.com/photo-1726195222148-fc8a7e7f37fa?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NHx8ZmVtYWxlJTIwYXRobGV0ZSUyMHBvcnRyYWl0fGVufDF8MXx8fDE3OTEyMzIyMjV8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=60&amp;h=60&amp;q=60" alt="Portrait of member Lena Brandt on a running track" width="240" height="240" loading="lazy">“I stopped adding hours and started reading my numbers. Twelve weeks later I ran my half nine minutes faster, on less mileage.”</p></blockquote>
+      <blockquote data-8b-motion="streak" data-from="left"><p class="m-text-7"><img class="st-chip m-chip" data-8b-motion="focus" data-8b-enter="85%" src="https://images.unsplash.com/photo-1726195222148-fc8a7e7f37fa?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NHx8ZmVtYWxlJTIwYXRobGV0ZSUyMHBvcnRyYWl0fGVufDF8MXx8fDE3OTEyMzIyMjV8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=100&amp;h=100&amp;q=60" alt="Portrait of member Lena Brandt on a running track" width="240" height="240" loading="lazy">“I stopped adding hours and started reading my numbers. Twelve weeks later I ran my half nine minutes faster, on less mileage.”</p></blockquote>
       <figcaption class="m-text-4">Lena Brandt · half marathon, 1:41 to 1:32</figcaption>
     </figure>
-    <ul class="st-notes" data-8b-motion="rise">
+    <ul class="st-notes" data-8b-items=":scope > li" data-8b-motion="rise" data-8b-enter="86%">
       <li><p class="m-text">“The gait video found in ten minutes what three seasons of sore shins never told me: my left foot.”</p><p class="m-text-4">Samir Haddad · trail runner</p></li>
       <li><p class="m-text">“The strength block alone put real pace on my serve. My doubles partner noticed before I did.”</p><p class="m-text-4">Julia Moretti · club tennis</p></li>
     </ul>
@@ -791,7 +962,7 @@ main { overflow-x: clip; }
     <div class="rc-text">
       <h2 class="m-text-3" id="recovery-title"><span class="rc-row">Recovery</span> <span class="rc-row">is part of</span> <span class="rc-row">the rep</span></h2>
       <p class="m-text-5">Adaptation happens after the session. The recovery suite is open to every member, and your coach books it into your week like any interval.</p>
-      <ul class="rc-list">
+      <ul class="rc-list" data-8b-items=":scope > li">
         <li><strong class="m-text-6">Cold plunge</strong><span class="m-text">Four degrees, three minutes, after the hard days.</span></li>
         <li><strong class="m-text-6">Sauna</strong><span class="m-text">Heat blocks before races in warm weather.</span></li>
         <li><strong class="m-text-6">Physio</strong><span class="m-text">Weekly slots, booked by your coach before a niggle becomes an injury.</span></li>
@@ -800,7 +971,7 @@ main { overflow-x: clip; }
     </div>
     <div class="rc-window">
       <div class="rc-sky" aria-hidden="true"><div class="rc-cool"></div><span class="rc-sun m-orb"></span></div>
-      <div class="rc-sea"><img style="background:#265973" src="https://images.unsplash.com/photo-1620239863785-603b0ea879b6?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8Y2FsbSUyMHdhdGVyJTIwc3VyZmFjZSUyMHJpcHBsZXMlMjBkYXJrJTIwYmx1ZXxlbnwxfDB8fHwxNzkxMjcyNDYwfDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=520&amp;q=60" alt="Calm blue water, pale in the distance, with slow rings spreading across it" width="900" height="600" loading="lazy"></div>
+      <div class="rc-sea"><img src="https://images.unsplash.com/photo-1620239863785-603b0ea879b6?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8Y2FsbSUyMHdhdGVyJTIwc3VyZmFjZSUyMHJpcHBsZXMlMjBkYXJrJTIwYmx1ZXxlbnwxfDB8fHwxNzkxMjcyNDYwfDA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=590&amp;q=60" alt="Calm blue water, pale in the distance, with slow rings spreading across it" width="900" height="600" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -808,12 +979,12 @@ main { overflow-x: clip; }
 <!-- membership: pricing: three plans in ruled columns, the middle one highlighted -->
 <section id="membership" class="l-sec" data-8b-section="membership" aria-labelledby="membership-title">
   <div class="mb-slide m-slide">
-    <svg class="mb-ring" data-8b-motion="orbit" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="199" pathLength="1"/><circle cx="200" cy="200" r="150" pathLength="1"/></svg>
+    <svg class="mb-ring" data-8b-motion="orbit" viewBox="0 0 400 400" aria-hidden="true" data-8b-items=":scope > circle"><circle cx="200" cy="200" r="199" pathLength="1"/><circle cx="200" cy="200" r="150" pathLength="1"/></svg>
     <div class="mb-head">
       <h2 class="m-text-3" id="membership-title" data-8b-motion="streak">Membership</h2>
       <p class="m-text-5">Every plan includes the entry test. Billed monthly, no joining fee, pause any time for injury or travel.</p>
     </div>
-    <div class="mb-plans" data-8b-motion="rise">
+    <div class="mb-plans" data-8b-items=":scope > .mb-plan" data-8b-motion="rise" data-8b-enter="86%">
       <article class="mb-plan">
         <h3 class="m-text-6">Base</h3>
         <p class="mb-price"><strong class="m-text-3">€89</strong><span class="m-text-4">a month</span></p>
@@ -848,7 +1019,7 @@ main { overflow-x: clip; }
     </div>
     <div class="fq-body">
       <div class="fq-rail" aria-hidden="true"><span class="fq-ball m-orb"></span></div>
-      <div class="fq-list">
+      <div class="fq-list" data-8b-items=":scope > details">
         <details class="fq-item"><summary class="m-text-6">Do I need to be fit already?</summary><p class="m-text">No. The first test sets your starting point, whatever it is. Most members start from three sessions a week or fewer.</p></details>
         <details class="fq-item"><summary class="m-text-6">What happens in the lab test?</summary><p class="m-text">Two hours: a short interview, a ramp test on a treadmill, bike or in the flume with breath gas and lactate readings, a gait or stroke video and a strength screen. You leave with a report the same day.</p></details>
         <details class="fq-item"><summary class="m-text-6">Can I train for more than one sport?</summary><p class="m-text">Yes. Plans are built from one engine profile, so a runner who also plays tennis gets one week that serves both.</p></details>
@@ -874,7 +1045,7 @@ main { overflow-x: clip; }
         <div><dt class="m-text-4">Phone</dt><dd><a data-8b-placeholder="phone" class="m-link" href="tel:+4500000000">+45 00 00 00 00</a></dd></div>
         <div><dt class="m-text-4">Email</dt><dd><a data-8b-placeholder="email" class="m-link" href="mailto:lab@arcline.example">lab@arcline.example</a></dd></div>
       </dl>
-      <form data-8b-placeholder="form" class="ct-form" action="#" method="post" novalidate data-8b-motion="rise">
+      <form data-8b-placeholder="form" class="ct-form" action="#" method="post" novalidate data-8b-motion="rise" data-8b-enter="86%" data-8b-items=":scope > *">
         <label class="m-field"><span class="m-field__label">Name</span><input name="name" type="text" autocomplete="name" required></label>
         <label class="m-field"><span class="m-field__label">Email</span><input name="email" type="email" autocomplete="email" required></label>
         <label class="m-field ct-wide"><span class="m-field__label">Main sport</span><select name="sport"><option>Running</option><option>Cycling</option><option>Swimming</option><option>Court sports</option><option>Strength</option><option>More than one</option></select></label>
@@ -895,14 +1066,14 @@ main { overflow-x: clip; }
     <div class="ft-cols">
       <p class="m-text">Measured training for run, ride, swim, court and strength. Club and lab on the harbour in Copenhagen.</p>
       <nav aria-label="Footer">
-        <ul>
+        <ul data-8b-items=":scope > li">
           <li><a class="m-link" href="#method">Method</a></li>
           <li><a class="m-link" href="#lab">Lab</a></li>
           <li><a class="m-link" href="#week">Week</a></li>
           <li><a class="m-link" href="#membership">Membership</a></li>
         </ul>
       </nav>
-      <ul>
+      <ul data-8b-items=":scope > li">
         <li><a data-8b-placeholder="social" class="m-link" href="https://www.instagram.com/">Instagram</a></li>
         <li><a data-8b-placeholder="social" class="m-link" href="https://www.strava.com/">Strava club</a></li>
         <li><a data-8b-placeholder="social" class="m-link" href="https://www.youtube.com/">YouTube</a></li>
@@ -912,9 +1083,6 @@ main { overflow-x: clip; }
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
 <script data-8b-part="section-script:navigation">
 (() => {
   const root = document.getElementById('navigation');
@@ -932,11 +1100,11 @@ main { overflow-x: clip; }
   bar.addEventListener('focusin', () => { hidden = false; bar.removeAttribute('data-hidden'); });
   const open = state => {
     menu.hidden = !state; toggle.setAttribute('aria-expanded', String(state));
-    if (state) { window.lenis?.stop(); close.focus(); } else { window.lenis?.start(); toggle.focus(); }
+    if (state) { window.motionKit?.wheel?.stop(); close.focus(); } else { window.motionKit?.wheel?.start(); toggle.focus(); }
   };
   toggle.addEventListener('click', () => open(true));
   close.addEventListener('click', () => open(false));
-  menu.addEventListener('click', event => { if (event.target.closest('a')) { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); window.lenis?.start(); } });
+  menu.addEventListener('click', event => { if (event.target.closest('a')) { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); window.motionKit?.wheel?.start(); } });
   addEventListener('keydown', event => { if (event.key === 'Escape' && !menu.hidden) open(false); });
 })();
 </script>
@@ -945,145 +1113,6 @@ main { overflow-x: clip; }
   const stage = document.querySelector('#opening .op-s1');
   new IntersectionObserver(([entry]) => entry.isIntersecting ? stage.removeAttribute('data-paused') : stage.setAttribute('data-paused', '')).observe(stage);
 })();
-</script>
-<script data-8b-part="motion-queue">
-(() => {
-  'use strict';
-  const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
-  const parsed = document.readyState === 'loading' ? new Promise(resolve => document.addEventListener('DOMContentLoaded', resolve, { once: true })) : Promise.resolve();
-  const ready = () => Promise.all([fonts, parsed]).then(() => firsts);
-  const nextTask = () => window.scheduler?.yield?.() ?? new Promise(resolve => setTimeout(resolve));
-  const refresh = () => {
-    if (typeof window.refreshScroll === 'function') return window.refreshScroll();
-    window.ScrollTrigger?.sort(); window.ScrollTrigger?.refresh();
-  };
-  const run = (setup, name) => {
-    for (const trigger of window.ScrollTrigger?.getAll() || []) if (!trigger.end && window.ScrollTrigger.getAll().includes(trigger)) trigger.refresh(0, 1);
-    const context = window.gsap.context(() => {});
-    const log = new MutationObserver(() => {});
-    log.observe(document.documentElement, { attributes: true, attributeOldValue: true, subtree: true });
-    let failure = null, records;
-    try { context.add(() => { try { setup(); } catch (error) { failure = error; } }); }
-    finally { records = log.takeRecords(); log.disconnect(); }
-    if (!failure) return true;
-    try { context.revert(); } catch (error) { console.error(name, 'revert failed', error); }
-    for (const { target, attributeName, oldValue } of records.reverse()) {
-      const now = target.getAttribute(attributeName);
-      if (oldValue == null) { if (now != null) target.removeAttribute(attributeName); }
-      else if (now !== oldValue) target.setAttribute(attributeName, oldValue);
-    }
-    console.error(name, failure);
-    return false;
-  };
-  let firsts = Promise.resolve(), tail = null, pending = 0, lazy = null, building = 0, firstCount = 0;
-  window.motionReady = ready();
-  parsed.then(() => { if (firstCount && !tail) firsts.then(refresh); });
-  window.queueMotion = (setup, { first = false, near, id } = {}) => {
-    if (!window.gsap || typeof setup !== 'function') return;
-    const name = id || document.currentScript?.getAttribute('data-8b-part') || 'motion';
-    if (near instanceof Element && window.IntersectionObserver) {
-      const watch = new IntersectionObserver(entries => {
-        if (!entries.some(entry => entry.isIntersecting)) return;
-        watch.disconnect();
-        building++;
-        lazy = (lazy || ready()).then(nextTask).then(() => run(setup, name)).finally(() => { if (!--building) refresh(); });
-      }, { rootMargin: '100% 0px' });
-      watch.observe(near);
-      return;
-    }
-    if (first) { firstCount++; firsts = firsts.then(() => fonts).then(() => { if (!run(setup, name)) refresh(); }); }
-    else {
-      pending++;
-      tail = (tail || ready()).then(nextTask).then(() => run(setup, name))
-        .finally(() => { if (!--pending) refresh(); });
-    }
-    window.motionReady = Promise.all([firsts, tail]);
-  };
-})();
-</script>
-<script data-8b-part="page-init">
-gsap.registerPlugin(ScrollTrigger);
-function refreshScroll() { ScrollTrigger.sort(); ScrollTrigger.refresh(); }
-gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
-  const bar = document.querySelector('#navigation .nav__bar');
-  const offset = bar ? bar.getBoundingClientRect().bottom + 12 : 0;
-  const lenis = window.lenis = new Lenis({ lerp: 0.09, anchors: { offset: -offset } });
-  const tick = time => lenis.raf(time * 1000);
-  lenis.on('scroll', ScrollTrigger.update);
-  gsap.ticker.add(tick); gsap.ticker.lagSmoothing(0);
-  return () => { gsap.ticker.remove(tick); gsap.ticker.lagSmoothing(500, 33); lenis.destroy(); window.lenis = null; };
-});
-</script>
-<script data-8b-part="motion">
-const blurOK = () => matchMedia('(min-width: 1024px) and (hover: hover)').matches;
-const effects = {
-  streak(element, vars = {}) {
-    const dir = vars.dir || (element.dataset.from === 'left' ? -1 : 1);
-    return gsap.timeline(vars.timeline)
-      .fromTo(element, { x: () => dir * Math.min(innerWidth * .22, 320), skewX: -20 * dir, scaleX: 1.15, transformOrigin: dir > 0 ? '100% 50%' : '0% 50%' },
-        { x: 0, skewX: 0, scaleX: 1, duration: 1, ease: vars.ease || 'expo.out', immediateRender: true }, 0)
-      .fromTo(element, { opacity: 0 }, { opacity: 1, duration: .35, ease: 'none', immediateRender: true }, 0);
-  },
-  focus(element, vars = {}) {
-    const blur = blurOK();
-    return gsap.timeline(vars.timeline)
-      .fromTo(element, { scale: 1.14, filter: blur ? 'blur(14px)' : 'none' },
-        { scale: 1, filter: blur ? 'blur(0px)' : 'none', duration: 1.2, ease: 'power3.out', immediateRender: true, clearProps: blur ? 'filter' : '' });
-  },
-  rise(element, vars = {}) {
-    return gsap.timeline(vars.timeline)
-      .fromTo(element.children, { y: 32, opacity: 0 }, { y: 0, opacity: 1, duration: .8, stagger: .09, ease: 'power3.out', immediateRender: true });
-  },
-  orbit(element, vars = {}) {
-    const circles = element.querySelectorAll('circle, ellipse');
-    return gsap.timeline(vars.timeline)
-      .fromTo(element, { rotation: -24 }, { rotation: 24, duration: 1, ease: 'none', immediateRender: true }, 0)
-      .fromTo(circles, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: .45, stagger: .05, ease: 'power2.out', immediateRender: true }, 0);
-  }
-};
-const bindings = {
-  streak: element => ({ trigger: element, start: 'top 88%', once: true }),
-  focus: element => ({ trigger: element, start: 'top 85%', once: true }),
-  rise: element => ({ trigger: element, start: 'top 86%', once: true }),
-  orbit: element => ({ trigger: element, start: 'top bottom', end: 'bottom top', scrub: true })
-};
-document.querySelectorAll('[data-8b-section]').forEach(section => {
-  Object.keys(bindings).forEach(name => {
-    const elements = section.querySelectorAll(`[data-8b-motion~="${name}"]`);
-    if (!elements.length) return;
-    const id = `effect:${name}:${section.id}`;
-    queueMotion(() => gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
-      elements.forEach((element, index) => ScrollTrigger.create({ id: `${id}:${index}`, ...bindings[name](element), animation: effects[name](element) }));
-    }), { first: section.getBoundingClientRect().top < innerHeight, id });
-  });
-});
-</script>
-<script data-8b-part="scene:opening">
-queueMotion(() => {
-  gsap.matchMedia().add({ motion: '(prefers-reduced-motion: no-preference)', blur: '(min-width: 1024px) and (hover: hover)' }, context => {
-    if (!context.conditions.motion) return;
-    const section = document.getElementById('opening');
-    const q = selector => section.querySelector(selector);
-    const vw = f => () => innerWidth * f;
-    const timeline = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
-      id: 'opening', trigger: section, start: 'top top', end: () => '+=' + q('.op-s1').offsetHeight, scrub: true, invalidateOnRefresh: true
-    }});
-    timeline
-      .to(q('.op-line--1'), { x: vw(-.6), skewX: 24, scaleX: 1.25, transformOrigin: '100% 50%', duration: .7, ease: 'power1.in' }, 0)
-      .to(q('.op-line--2'), { x: vw(.55), skewX: -24, scaleX: 1.25, transformOrigin: '0% 50%', duration: .66, ease: 'power1.in' }, .03)
-      .to(q('.op-line--3'), { x: vw(-.75), skewX: 24, scaleX: 1.25, transformOrigin: '100% 50%', duration: .62, ease: 'power1.in' }, .06)
-      .to(section.querySelectorAll('.op-line'), { opacity: 0, duration: .2, ease: 'none' }, .5)
-      .to(q('.op-meta'), { y: -40, opacity: 0, duration: .35 }, 0)
-      .to(q('.op-photo'), { scale: 1.3, xPercent: -6, filter: context.conditions.blur ? 'blur(10px)' : 'none', duration: 1 }, 0)
-      .to(q('.op-ring'), { opacity: 0, duration: .5 }, 0)
-      .to(q('.op-slide'), { scale: .8, yPercent: -4, xPercent: 6, duration: 1, ease: 'power1.in' }, 0)
-      .to(q('.op-dim'), { opacity: .78, duration: 1 }, 0)
-      .to(q('.op-ground'), { opacity: 0, duration: 1 }, 0)
-      .fromTo(q('.op-card'), { x: vw(.08), rotation: 2.5 }, { x: 0, rotation: 0, duration: 1, ease: 'power2.out' }, 0)
-      .fromTo(q('.op-title2'), { x: vw(.35), skewX: -24, scaleX: 1.3, transformOrigin: '0% 50%' }, { x: 0, skewX: 0, scaleX: 1, duration: .8, ease: 'expo.out' }, .2)
-      .fromTo(q('.op-orb'), { x: vw(.6), rotation: 300, scale: .4 }, { x: 0, rotation: 0, scale: 1, duration: 1, ease: 'power3.out' }, 0);
-  });
-}, { first: true, id: 'opening' });
 </script>
 <script data-8b-part="section-script:contact">
 (() => {
@@ -1097,147 +1126,200 @@ queueMotion(() => {
   });
 })();
 </script>
-<script data-8b-part="scene:method">
-queueMotion(() => {
-  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
-    const section = document.getElementById('method');
-    const timeline = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
-      id: 'method', trigger: section.querySelector('.mt-title'), start: 'top 92%', end: 'top 32%', scrub: true, invalidateOnRefresh: true
-    }});
-    section.querySelectorAll('.mt-gap').forEach((gap, index) => {
-      const chip = gap.querySelector('.mt-chip');
-      const after = gap.parentElement.querySelector('.mt-after');
-      const at = index * .16;
-      if (after) timeline.fromTo(after, { x: () => -gap.offsetWidth }, { x: 0, duration: .45, ease: 'power2.out' }, at);
-      timeline.fromTo(chip, { x: () => -gap.offsetWidth * 1.5, y: () => -innerHeight * .28, rotation: -300, scale: .45 },
-        { x: 0, y: 0, rotation: 0, scale: 1, duration: .7, ease: 'power2.inOut' }, at + .04);
-    });
+<script data-8b-part="motion-kit">
+(() => {
+const live = document.documentElement.hasAttribute('data-8b-live');
+const measures = new Set();
+let queued = false;
+const run = fn => { try { fn(); } catch (error) { console.error('[motion-kit] measure failed', error); } };
+const remeasure = () => {
+if (queued) return;
+queued = true;
+requestAnimationFrame(() => { queued = false; measures.forEach(run); realign(); });
+};
+const realign = () => document.getAnimations().forEach(animation => {
+if (animation.timeline && animation.timeline !== document.timeline && animation.playState === 'running') { animation.pause(); animation.play(); }
+});
+window.motionKit = {
+live,
+box(element) {
+if (!(element instanceof HTMLElement)) { const r = element.getBoundingClientRect(); return { x: r.left + scrollX, y: r.top + scrollY, w: r.width, h: r.height }; }
+let x = 0, y = 0, node = element;
+while (node) { x += node.offsetLeft; y += node.offsetTop; node = node.offsetParent; }
+return { x, y, w: element.offsetWidth, h: element.offsetHeight };
+},
+set(element, vars) { for (const [name, value] of Object.entries(vars)) element.style.setProperty(name, String(value)); },
+measure(fn) { if (!live) return; measures.add(fn); run(fn); },
+scene(id, fn) {
+if (!live) return;
+try { fn(); } catch (error) {
+console.error(`[motion-kit] scene ${id} failed; its section stays static`, error);
+document.querySelector(`style[data-8b-part="scene:${id}"]`)?.setAttribute('media', 'not all');
+}
+}
+};
+if (!live) { window.motionReady = Promise.resolve(); return; }
+const number = () => document.querySelectorAll('[data-8b-items]').forEach(group => {
+let items;
+try { items = [...group.querySelectorAll(group.getAttribute('data-8b-items'))]; } catch { return; }
+items.forEach((item, index) => { item.style.setProperty('--i', index); item.style.setProperty('--n', items.length); });
+});
+number();
+measures.add(number);
+requestAnimationFrame(realign);
+new ResizeObserver(remeasure).observe(document.body);
+document.fonts?.ready.then(remeasure);
+addEventListener('load', remeasure);
+window.motionReady = (document.fonts?.ready ?? Promise.resolve()).then(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+})();
+(() => {
+const kit = window.motionKit;
+if (!kit.live || !matchMedia('(pointer: fine)').matches) return;
+let target = scrollY, current = scrollY, last = 0, running = false, paused = false;
+const inner = (node, dy) => {
+for (; node && node !== document.body && node !== document.documentElement; node = node.parentElement) {
+if (!/(auto|scroll)/.test(getComputedStyle(node).overflowY) || node.scrollHeight <= node.clientHeight) continue;
+if (dy > 0 ? node.scrollTop + node.clientHeight < node.scrollHeight - 1 : node.scrollTop > 0) return true;
+}
+return false;
+};
+const step = now => {
+current += (target - current) * (1 - Math.exp(-5.3 * Math.min(0.05, (now - last) / 1000)));
+last = now;
+if (Math.abs(target - current) < 0.5) current = target;
+scrollTo({ top: current, behavior: 'instant' });
+if (current !== target) requestAnimationFrame(step); else running = false;
+};
+addEventListener('wheel', event => {
+if (paused || event.ctrlKey || Math.abs(event.deltaX) > Math.abs(event.deltaY) || inner(event.target, event.deltaY)) return;
+event.preventDefault();
+if (!running) target = current = scrollY;
+const unit = event.deltaMode === 1 ? 40 : event.deltaMode === 2 ? innerHeight : 1;
+target = Math.max(0, Math.min(document.documentElement.scrollHeight - innerHeight, target + event.deltaY * unit * 0.95));
+if (!running) { running = true; last = performance.now(); requestAnimationFrame(step); }
+}, { passive: false });
+kit.wheel = { stop() { paused = true; }, start() { paused = false; } };
+})();
+(() => {
+const kit = window.motionKit;
+if (!kit.live) return;
+const at = element => {
+const own = /^(\d{1,3}(?:\.\d+)?)%$/.exec((element.getAttribute('data-8b-enter') || '').trim());
+return own && +own[1] <= 100 ? own[1] / 100 : 0.88;
+};
+let pending = [...document.querySelectorAll('[data-8b-motion]')].map(element => ({ element, y: 0, at: at(element) }));
+let queued = false;
+const check = () => {
+queued = false;
+pending = pending.filter(item => {
+if (item.y > scrollY + innerHeight * item.at) return true;
+item.element.classList.add('is-in');
+return false;
+});
+};
+const queue = () => { if (!queued) { queued = true; requestAnimationFrame(check); } };
+kit.measure(() => { pending.forEach(item => { item.y = kit.box(item.element).y; }); queue(); });
+addEventListener('scroll', queue, { passive: true });
+})();
+(() => {
+if (!window.motionKit.live) return;
+const sheet = new CSSStyleSheet();
+sheet.replaceSync('[data-8b-off],[data-8b-off]::before,[data-8b-off]::after{animation-play-state:paused!important}');
+document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];
+const watch = new IntersectionObserver(entries => entries.forEach(entry => entry.target.toggleAttribute('data-8b-off', !entry.isIntersecting)));
+const watched = new WeakSet();
+const scan = () => document.getAnimations().forEach(animation => {
+const element = animation.effect?.target;
+if (!element || watched.has(element) || animation.effect.getTiming().iterations !== Infinity || animation.timeline !== document.timeline) return;
+watched.add(element);
+watch.observe(element);
+});
+scan();
+addEventListener('load', scan);
+document.addEventListener('animationstart', scan, true);
+})();
+(() => {
+const kit = window.motionKit;
+kit.track = () => {};
+if (!kit.live) return;
+const named = { top: 0, center: 0.5, bottom: 1 };
+const point = text => text.trim().split(/\s+/).map(word => named[word] ?? parseFloat(word) / 100);
+kit.track = (element, start, end, fn) => {
+const [s0, v0] = point(start), [s1, v1] = point(end);
+let queued = false;
+const run = () => {
+queued = false;
+const box = element.getBoundingClientRect(), vh = innerHeight;
+const d0 = box.top + box.height * s0 - vh * v0, d1 = box.top + box.height * s1 - vh * v1;
+fn(d1 === d0 ? (d0 <= 0 ? 1 : 0) : Math.min(1, Math.max(0, -d0 / (d1 - d0))));
+};
+addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(run); } }, { passive: true });
+kit.measure(run);
+};
+})();
+</script>
+<script data-8b-part="scene-script:disciplines">
+motionKit.scene('disciplines', () => {
+  const grid = document.querySelector('#disciplines .ds-grid');
+  const tiles = [...grid.querySelectorAll('.ds-tile')];
+  motionKit.measure(() => {
+    const height = grid.offsetHeight, view = innerHeight;
+    motionKit.set(grid, { '--disciplines-end': height > view ? '98vh' : height > view * 0.8 ? '62vh' : 'calc(50% - 2vh)' });
+    const centreY = Math.min(grid.clientHeight, view * 0.9) / 2;
+    tiles.forEach(tile => motionKit.set(tile, {
+      '--disciplines-x': `${grid.clientWidth / 2 - (tile.offsetLeft + tile.offsetWidth / 2)}px`,
+      '--disciplines-y': `${centreY - (tile.offsetTop + tile.offsetHeight / 2)}px`,
+      '--disciplines-s': Math.min(1, 210 / tile.offsetWidth, 240 / tile.offsetHeight)
+    }));
   });
 });
 </script>
-<script data-8b-part="scene:disciplines">
-queueMotion(() => {
-  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
-    const section = document.getElementById('disciplines');
-    const grid = section.querySelector('.ds-grid');
-    const tiles = [...grid.querySelectorAll('.ds-tile')];
-    const tilt = [-8, 5, -3, 9, -6, 3, -10, 6];
-    const toCentre = (tile, axis) => axis === 'x'
-      ? grid.clientWidth / 2 - (tile.offsetLeft + tile.offsetWidth / 2)
-      : Math.min(grid.clientHeight, innerHeight * .9) / 2 - (tile.offsetTop + tile.offsetHeight / 2);
-    const timeline = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
-      id: 'disciplines', trigger: grid, start: 'top 88%', end: () => grid.offsetHeight > innerHeight ? 'top 2%' : grid.offsetHeight > innerHeight * .8 ? 'top 38%' : 'center 52%', scrub: true, invalidateOnRefresh: true
-    }});
-    gsap.set(tiles, { zIndex: index => tiles.length - index });
-    tiles.forEach((tile, index) => {
-      timeline.fromTo(tile, {
-        x: () => toCentre(tile, 'x'), y: () => toCentre(tile, 'y'), rotation: tilt[index % tilt.length],
-        scale: () => Math.min(1, 210 / tile.offsetWidth, 240 / tile.offsetHeight)
-      }, { x: 0, y: 0, rotation: 0, scale: 1, duration: .5, ease: 'power2.inOut' }, index * .07);
-    });
+<script data-8b-part="scene-script:week">
+motionKit.scene('week', () => {
+  const section = document.getElementById('week');
+  const stage = section.querySelector('.wk-stage');
+  const view = section.querySelector('.wk-view');
+  const track = section.querySelector('.wk-track');
+  section.setAttribute('data-scrubbed', '');
+  motionKit.measure(() => {
+    const pad = parseFloat(getComputedStyle(view).paddingLeft) || 0;
+    const distance = Math.max(0, track.offsetWidth - (view.clientWidth - pad * 2));
+    motionKit.set(section, { '--week-distance': `${distance}px`, '--wk-height': `${stage.offsetHeight + distance}px` });
   });
-});
-</script>
-<script data-8b-part="scene:lab">
-queueMotion(() => {
-  gsap.matchMedia().add({ motion: '(prefers-reduced-motion: no-preference)', wide: '(min-width: 861px)' }, context => {
-    if (!context.conditions.motion) return;
-    const section = document.getElementById('lab');
-    const stage = section.querySelector('.lb-stage');
-    const notes = [...section.querySelectorAll('.lb-note')];
-    const timeline = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
-      id: 'lab', trigger: stage, start: 'top 88%', end: 'center 55%', scrub: true, invalidateOnRefresh: true
-    }});
-    timeline
-      .fromTo(section.querySelector('.lb-lens'), { clipPath: 'circle(7% at 50% 50%)' }, { clipPath: 'circle(50% at 50% 50%)', duration: 1, ease: 'power2.inOut' }, 0)
-      .fromTo(section.querySelector('.lb-lens img'), { scale: 1.5 }, { scale: 1, duration: 1, ease: 'power2.out' }, 0)
-      .fromTo(section.querySelector('.lb-ring'), { rotation: -140, transformOrigin: '50% 50%' }, { rotation: 0, duration: 1, ease: 'power2.out' }, 0)
-      .fromTo(section.querySelector('.lb-ring circle'), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: .6 }, 0);
-    if (context.conditions.wide) {
-      notes.forEach((note, index) => {
-        const angle = parseFloat(note.style.getPropertyValue('--a')) || 0;
-        timeline.fromTo(note, { '--a': '-90deg', opacity: 0 }, { '--a': `${angle}deg`, opacity: 1, duration: .7, ease: 'power2.out' }, .2 + index * .06);
-      });
-    } else {
-      timeline.fromTo(notes, { x: 48, opacity: 0 }, { x: 0, opacity: 1, duration: .45, stagger: .08, ease: 'power2.out' }, .45);
+  const leaning = () => Math.atan(new DOMMatrixReadOnly(getComputedStyle(track).transform).c) * 180 / Math.PI;
+  let last = null, lean = null;
+  motionKit.track(section, 'top 0%', 'bottom 100%', progress => {
+    const now = performance.now(), y = scrollY;
+    if (last && progress !== last.progress && now > last.now) {
+      const velocity = (y - last.y) / (now - last.now) * 1000;
+      const to = Math.max(-9, Math.min(9, velocity / -260)), from = leaning();
+      lean?.cancel();
+      lean = track.animate([
+        { transform: `skewX(${from}deg)`, easing: 'cubic-bezier(0.25, 1, 0.5, 1)' },
+        { transform: `skewX(${from + (to - from) * 0.673}deg)`, offset: 0.237, easing: 'cubic-bezier(0.25, 1, 0.5, 1)' },
+        { transform: 'skewX(0deg)' }
+      ], { duration: 590 });
     }
+    last = { now, y, progress };
   });
 });
 </script>
-<script data-8b-part="scene:week">
-queueMotion(() => {
-  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
-    const section = document.getElementById('week');
-    const stage = section.querySelector('.wk-stage');
-    const view = section.querySelector('.wk-view');
-    const track = section.querySelector('.wk-track');
-    section.setAttribute('data-scrubbed', '');
-    const distance = () => {
-      const pad = parseFloat(getComputedStyle(view).paddingLeft) || 0;
-      return Math.max(0, track.offsetWidth - (view.clientWidth - pad * 2));
-    };
-    const measure = () => section.style.setProperty('--wk-height', `${stage.offsetHeight + distance()}px`);
-    measure();
-    ScrollTrigger.addEventListener('refreshInit', measure);
-    const skewTo = gsap.quickTo(track, 'skewX', { duration: .45, ease: 'power3.out' });
-    const settle = gsap.delayedCall(.14, () => skewTo(0)).pause();
-    gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
-      id: 'week', trigger: section, start: 'top top', end: 'bottom bottom', scrub: true, invalidateOnRefresh: true,
-      onUpdate: self => { skewTo(gsap.utils.clamp(-9, 9, self.getVelocity() / -260)); settle.restart(true); }
-    }})
-      .to(track, { x: () => -distance(), duration: 1 }, 0)
-      .fromTo(section.querySelector('.wk-progress span'), { scaleX: 0 }, { scaleX: 1, duration: 1 }, 0);
-    return () => {
-      ScrollTrigger.removeEventListener('refreshInit', measure);
-      section.style.removeProperty('--wk-height');
-      section.removeAttribute('data-scrubbed');
-    };
+<script data-8b-part="scene-script:faq">
+motionKit.scene('faq', () => {
+  const section = document.getElementById('faq');
+  const rail = section.querySelector('.fq-rail');
+  const ball = section.querySelector('.fq-ball');
+  motionKit.measure(() => {
+    const travel = Math.max(0, rail.clientHeight - ball.offsetHeight);
+    motionKit.set(ball, { '--faq-travel': `${travel}px`, '--faq-turn': `${travel / (Math.PI * ball.offsetWidth) * 360}deg` });
   });
 });
 </script>
-<script data-8b-part="scene:recovery">
-queueMotion(() => {
-  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
-    const section = document.getElementById('recovery');
-    gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
-      id: 'recovery', trigger: section.querySelector('.rc-window'), start: 'top 92%', end: 'center 50%', scrub: true
-    }})
-      .fromTo(section.querySelector('.rc-sun'), { yPercent: -110, scale: .8 }, { yPercent: 0, scale: 1, duration: 1, ease: 'power1.inOut' }, 0)
-      .fromTo(section.querySelector('.rc-cool'), { opacity: 0 }, { opacity: 1, duration: 1 }, 0)
-      .fromTo(section.querySelector('.rc-sea img'), { yPercent: -5, scale: 1.12 }, { yPercent: 0, scale: 1, duration: 1 }, 0);
-  });
-});
-</script>
-<script data-8b-part="scene:faq">
-queueMotion(() => {
-  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
-    const section = document.getElementById('faq');
-    const rail = section.querySelector('.fq-rail');
-    const ball = section.querySelector('.fq-ball');
-    const travel = () => Math.max(0, rail.clientHeight - ball.offsetHeight);
-    gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
-      id: 'faq', trigger: section.querySelector('.fq-list'), start: 'top 72%', end: 'bottom 72%', scrub: .5, invalidateOnRefresh: true
-    }})
-      .fromTo(ball, { y: 0, rotation: 0 }, { y: travel, rotation: () => travel() / (Math.PI * ball.offsetWidth) * 360, duration: 1 });
-    const items = section.querySelectorAll('.fq-item');
-    const onToggle = () => refreshScroll();
-    items.forEach(item => item.addEventListener('toggle', onToggle));
-    return () => items.forEach(item => item.removeEventListener('toggle', onToggle));
-  });
-});
-</script>
-<script data-8b-part="scene:contact">
-queueMotion(() => {
-  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
-    const section = document.getElementById('contact');
-    const run = section.querySelector('.ct-run');
-    const title = section.querySelector('.ct-title');
-    gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
-      id: 'contact', trigger: run, start: 'top 92%', end: 'top 38%', scrub: true, invalidateOnRefresh: true
-    }})
-      .fromTo(section.querySelector('.ct-line'), { scaleX: () => title.offsetWidth / run.clientWidth }, { scaleX: 1, duration: 1, ease: 'power2.inOut' }, 0)
-      .fromTo(title, { x: () => -(run.clientWidth - title.offsetWidth), skewX: -16 }, { x: 0, skewX: 0, duration: 1, ease: 'power2.inOut' }, 0);
-  });
+<script data-8b-part="scene-script:contact">
+motionKit.scene('contact', () => {
+  const run = document.querySelector('#contact .ct-run');
+  const title = run.querySelector('.ct-title');
+  motionKit.measure(() => motionKit.set(run, { '--contact-travel': `${title.offsetWidth - run.clientWidth}px`, '--contact-line': title.offsetWidth / run.clientWidth }));
 });
 </script>
 </body>
